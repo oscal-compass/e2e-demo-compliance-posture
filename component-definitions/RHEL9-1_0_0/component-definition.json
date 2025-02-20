@@ -1,0 +1,2665 @@
+{
+  "component-definition": {
+    "uuid": "ef32e2f6-d985-49b8-bfdc-89b1011b303f",
+    "metadata": {
+      "title": "CIS Red Hat Enterprise Linux 9 Benchmark",
+      "last-modified": "2025-02-17T18:15:57+00:00",
+      "version": "1.1.0",
+      "oscal-version": "1.1.3"
+    },
+    "components": [
+      {
+        "uuid": "dd135a64-baaa-4104-9043-03fe935e018c",
+        "type": "software",
+        "title": "Red Hat Enterprise Linux 9",
+        "description": "Red Hat Enterprise Linux 9",
+        "props": [
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.2",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "The `/etc/crontab` file is used by `cron` to control its own jobs. The commands in this item make sure that root is the user and group owner of the file and that only the owner can access the file.",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 1 - Workstation; Level 1 - Server\"",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1.2",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure permissions on /etc/crontab are configured",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "This file contains information on what system jobs are run by cron. Write access to this file could provide unprivileged users with the ability to elevate their privileges. Read access to this file could provide users with the ability to gain insight on system jobs that run on the system and could provide them a way to gain unauthorized privileged access.",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following commands to set ownership and permissions on `/etc/crontab` : ``` # chown root:root /etc/crontab # chmod og-rwx /etc/crontab ```",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following command and verify `Uid` and `Gid` are both `0/root` and `Access` does not grant permissions to `group` or `other` : ``` # stat /etc/crontab Access: (0600/-rw-------) Uid: ( 0/ root) Gid: ( 0/ root) ```",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Additional_Information",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "**NIST SP 800-53 Rev. 5:** - AC-3 - MP-2",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Configure Data Access Control Lists CONTROL:v8 3.3 DESCRIPTION:Configure data access control lists based on a user’s need to know. Apply data access control lists, also known as access permissions, to local and remote file systems, databases, and applications.;TITLE:Protect Information through Access Control Lists CONTROL:v7 14.6 DESCRIPTION:Protect all information stored on systems with file system, network share, claims, application, or database specific access control lists. These controls will enforce the principle that only authorized individuals should have access to the information based on their need to access the information as a part of their responsibilities.;\"",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "3.3",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "V8_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "14.6",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "V7_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "V7_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Group_Section_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Group_Title_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure time-based job schedulers",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Group_Description_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "`cron` is a time-based job scheduler used to schedule jobs, commands or shell scripts, to run periodically at fixed times, dates, or intervals.  `at` provides the ability to execute a command or shell script at a specified date and hour, or after a given interval of time.  Other methods exist for scheduling jobs, such as `systemd timers`. If another method is used, it should be secured in accordance with local site policy  _Note: `systemd timers` are systemd unit files whose name ends in `.timer` that control `.service` files or events. Timers can be used as an alternative to `cron` and `at`. Timers have built-in support for calendar time events, monotonic time events, and can be run asynchronously_  _If `cron` and `at` are not installed, this section can be skipped._",
+            "remarks": "rule_set_00"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.3",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "This directory contains system `cron` jobs that need to run on an hourly basis. The files in this directory cannot be manipulated by the `crontab` command, but are instead edited by system administrators using a text editor. The commands below restrict read/write and search access to user and group root, preventing regular users from accessing this directory.",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 1 - Workstation; Level 1 - Server\"",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1.3",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure permissions on /etc/cron.hourly are configured",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Granting write access to this directory for non-privileged users could provide them the means for gaining unauthorized elevated privileges. Granting read access to this directory could give an unprivileged user insight in how to gain elevated privileges or circumvent auditing controls.",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following commands to set ownership and permissions on `/etc/cron.hourly` :  ``` # chown root:root /etc/cron.hourly  # chmod og-rwx /etc/cron.hourly ```",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following command and verify `Uid` and `Gid` are both `0/root` and `Access` does not grant permissions to `group` or `other` :  ``` # stat /etc/cron.hourly  Access: (0700/drwx------) Uid: ( 0/ root) Gid: ( 0/ root) ```",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Configure Data Access Control Lists CONTROL:v8 3.3 DESCRIPTION:Configure data access control lists based on a user’s need to know. Apply data access control lists, also known as access permissions, to local and remote file systems, databases, and applications.;TITLE:Protect Information through Access Control Lists CONTROL:v7 14.6 DESCRIPTION:Protect all information stored on systems with file system, network share, claims, application, or database specific access control lists. These controls will enforce the principle that only authorized individuals should have access to the information based on their need to access the information as a part of their responsibilities.;\"",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "3.3",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "V8_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "14.6",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "V7_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "V7_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Group_Section_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Group_Title_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure time-based job schedulers",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Group_Description_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "`cron` is a time-based job scheduler used to schedule jobs, commands or shell scripts, to run periodically at fixed times, dates, or intervals.  `at` provides the ability to execute a command or shell script at a specified date and hour, or after a given interval of time.  Other methods exist for scheduling jobs, such as `systemd timers`. If another method is used, it should be secured in accordance with local site policy  _Note: `systemd timers` are systemd unit files whose name ends in `.timer` that control `.service` files or events. Timers can be used as an alternative to `cron` and `at`. Timers have built-in support for calendar time events, monotonic time events, and can be run asynchronously_  _If `cron` and `at` are not installed, this section can be skipped._",
+            "remarks": "rule_set_01"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.4",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "The `/etc/cron.daily` directory contains system cron jobs that need to run on a daily basis. The files in this directory cannot be manipulated by the `crontab` command, but are instead edited by system administrators using a text editor. The commands below restrict read/write and search access to user and group root, preventing regular users from accessing this directory.",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 1 - Workstation; Level 1 - Server\"",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1.4",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure permissions on /etc/cron.daily are configured",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Granting write access to this directory for non-privileged users could provide them the means for gaining unauthorized elevated privileges. Granting read access to this directory could give an unprivileged user insight in how to gain elevated privileges or circumvent auditing controls.",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following commands to set ownership and permissions on `/etc/cron.daily` :  ``` # chown root:root /etc/cron.daily  # chmod og-rwx /etc/cron.daily ```",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following command and verify `Uid` and `Gid` are both `0/root` and `Access` does not grant permissions to `group` or `other` :  ``` # stat /etc/cron.daily  Access: (0700/drwx------) Uid: ( 0/ root) Gid: ( 0/ root) ```",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Configure Data Access Control Lists CONTROL:v8 3.3 DESCRIPTION:Configure data access control lists based on a user’s need to know. Apply data access control lists, also known as access permissions, to local and remote file systems, databases, and applications.;TITLE:Protect Information through Access Control Lists CONTROL:v7 14.6 DESCRIPTION:Protect all information stored on systems with file system, network share, claims, application, or database specific access control lists. These controls will enforce the principle that only authorized individuals should have access to the information based on their need to access the information as a part of their responsibilities.;\"",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "3.3",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "V8_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "14.6",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "V7_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "V7_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Group_Section_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Group_Title_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure time-based job schedulers",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Group_Description_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "`cron` is a time-based job scheduler used to schedule jobs, commands or shell scripts, to run periodically at fixed times, dates, or intervals.  `at` provides the ability to execute a command or shell script at a specified date and hour, or after a given interval of time.  Other methods exist for scheduling jobs, such as `systemd timers`. If another method is used, it should be secured in accordance with local site policy  _Note: `systemd timers` are systemd unit files whose name ends in `.timer` that control `.service` files or events. Timers can be used as an alternative to `cron` and `at`. Timers have built-in support for calendar time events, monotonic time events, and can be run asynchronously_  _If `cron` and `at` are not installed, this section can be skipped._",
+            "remarks": "rule_set_02"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.5",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "The `/etc/cron.weekly` directory contains system cron jobs that need to run on a weekly basis. The files in this directory cannot be manipulated by the `crontab` command, but are instead edited by system administrators using a text editor. The commands below restrict read/write and search access to user and group root, preventing regular users from accessing this directory.",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 1 - Workstation; Level 1 - Server\"",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1.5",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure permissions on /etc/cron.weekly are configured",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Granting write access to this directory for non-privileged users could provide them the means for gaining unauthorized elevated privileges. Granting read access to this directory could give an unprivileged user insight in how to gain elevated privileges or circumvent auditing controls.",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following commands to set ownership and permissions on `/etc/cron.weekly` :  ``` # chown root:root /etc/cron.weekly  # chmod og-rwx /etc/cron.weekly ```",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following command and verify `Uid` and `Gid` are both `0/root` and `Access` does not grant permissions to `group` or `other` :  ``` # stat /etc/cron.weekly  Access: (0700/drwx------) Uid: ( 0/ root) Gid: ( 0/ root) ```",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Configure Data Access Control Lists CONTROL:v8 3.3 DESCRIPTION:Configure data access control lists based on a user’s need to know. Apply data access control lists, also known as access permissions, to local and remote file systems, databases, and applications.;TITLE:Protect Information through Access Control Lists CONTROL:v7 14.6 DESCRIPTION:Protect all information stored on systems with file system, network share, claims, application, or database specific access control lists. These controls will enforce the principle that only authorized individuals should have access to the information based on their need to access the information as a part of their responsibilities.;\"",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "3.3",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "V8_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "14.6",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "V7_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "V7_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Group_Section_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Group_Title_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure time-based job schedulers",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Group_Description_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "`cron` is a time-based job scheduler used to schedule jobs, commands or shell scripts, to run periodically at fixed times, dates, or intervals.  `at` provides the ability to execute a command or shell script at a specified date and hour, or after a given interval of time.  Other methods exist for scheduling jobs, such as `systemd timers`. If another method is used, it should be secured in accordance with local site policy  _Note: `systemd timers` are systemd unit files whose name ends in `.timer` that control `.service` files or events. Timers can be used as an alternative to `cron` and `at`. Timers have built-in support for calendar time events, monotonic time events, and can be run asynchronously_  _If `cron` and `at` are not installed, this section can be skipped._",
+            "remarks": "rule_set_03"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.6",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "The `/etc/cron.monthly` directory contains system cron jobs that need to run on a monthly basis. The files in this directory cannot be manipulated by the `crontab` command, but are instead edited by system administrators using a text editor. The commands below restrict read/write and search access to user and group root, preventing regular users from accessing this directory.",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 1 - Workstation; Level 1 - Server\"",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1.6",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure permissions on /etc/cron.monthly are configured",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Granting write access to this directory for non-privileged users could provide them the means for gaining unauthorized elevated privileges. Granting read access to this directory could give an unprivileged user insight in how to gain elevated privileges or circumvent auditing controls.",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following commands to set ownership and permissions on `/etc/cron.monthly` :  ``` # chown root:root /etc/cron.monthly  # chmod og-rwx /etc/cron.monthly ```",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following command and verify `Uid` and `Gid` are both `0/root` and `Access` does not grant permissions to `group` or `other` : ``` # stat /etc/cron.monthly  Access: (0700/drwx------) Uid: ( 0/ root) Gid: ( 0/ root) ```",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Configure Data Access Control Lists CONTROL:v8 3.3 DESCRIPTION:Configure data access control lists based on a user’s need to know. Apply data access control lists, also known as access permissions, to local and remote file systems, databases, and applications.;TITLE:Protect Information through Access Control Lists CONTROL:v7 14.6 DESCRIPTION:Protect all information stored on systems with file system, network share, claims, application, or database specific access control lists. These controls will enforce the principle that only authorized individuals should have access to the information based on their need to access the information as a part of their responsibilities.;\"",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "3.3",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "V8_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "14.6",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "V7_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "V7_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Group_Section_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Group_Title_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure time-based job schedulers",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Group_Description_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "`cron` is a time-based job scheduler used to schedule jobs, commands or shell scripts, to run periodically at fixed times, dates, or intervals.  `at` provides the ability to execute a command or shell script at a specified date and hour, or after a given interval of time.  Other methods exist for scheduling jobs, such as `systemd timers`. If another method is used, it should be secured in accordance with local site policy  _Note: `systemd timers` are systemd unit files whose name ends in `.timer` that control `.service` files or events. Timers can be used as an alternative to `cron` and `at`. Timers have built-in support for calendar time events, monotonic time events, and can be run asynchronously_  _If `cron` and `at` are not installed, this section can be skipped._",
+            "remarks": "rule_set_04"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.7",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "The `/etc/cron.d` directory contains system `cron` jobs that need to run in a similar manner to the hourly, daily, weekly and monthly jobs from `/etc/crontab` , but require more granular control as to when they run. The files in this directory cannot be manipulated by the `crontab` command, but are instead edited by system administrators using a text editor. The commands below restrict read/write and search access to user and group root, preventing regular users from accessing this directory.",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 1 - Workstation; Level 1 - Server\"",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1.7",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure permissions on /etc/cron.d are configured",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Granting write access to this directory for non-privileged users could provide them the means for gaining unauthorized elevated privileges. Granting read access to this directory could give an unprivileged user insight in how to gain elevated privileges or circumvent auditing controls.",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following commands to set ownership and permissions on `/etc/cron.d` :  ``` # chown root:root /etc/cron.d  # chmod og-rwx /etc/cron.d ```",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following command and verify `Uid` and `Gid` are both `0/root` and `Access` does not grant permissions to `group` or `other` :  ``` # stat /etc/cron.d  Access: (0700/drwx------) Uid: ( 0/ root) Gid: ( 0/ root) ```",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Additional_Information",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "**NIST SP 800-53 Rev. 5:** - AC-3 - MP-2",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Configure Data Access Control Lists CONTROL:v8 3.3 DESCRIPTION:Configure data access control lists based on a user’s need to know. Apply data access control lists, also known as access permissions, to local and remote file systems, databases, and applications.;TITLE:Protect Information through Access Control Lists CONTROL:v7 14.6 DESCRIPTION:Protect all information stored on systems with file system, network share, claims, application, or database specific access control lists. These controls will enforce the principle that only authorized individuals should have access to the information based on their need to access the information as a part of their responsibilities.;\"",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "3.3",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "V8_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "14.6",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "V7_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "V7_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Group_Section_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Group_Title_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure time-based job schedulers",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Group_Description_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "`cron` is a time-based job scheduler used to schedule jobs, commands or shell scripts, to run periodically at fixed times, dates, or intervals.  `at` provides the ability to execute a command or shell script at a specified date and hour, or after a given interval of time.  Other methods exist for scheduling jobs, such as `systemd timers`. If another method is used, it should be secured in accordance with local site policy  _Note: `systemd timers` are systemd unit files whose name ends in `.timer` that control `.service` files or events. Timers can be used as an alternative to `cron` and `at`. Timers have built-in support for calendar time events, monotonic time events, and can be run asynchronously_  _If `cron` and `at` are not installed, this section can be skipped._",
+            "remarks": "rule_set_05"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.8",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "If `cron` is installed in the system, configure `/etc/cron.allow` to allow specific users to use these services. If `/etc/cron.allow` does not exist, then `/etc/cron.deny` is checked. Any user not specifically defined in those files is allowed to use cron. By removing the file, only users in `/etc/cron.allow` are allowed to use cron.   _Note: Even though a given user is not listed in `cron.allow`, cron jobs can still be run as that user. The `cron.allow` file only controls administrative access to the crontab command for scheduling and modifying cron jobs._",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 1 - Workstation; Level 1 - Server\"",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1.8",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure cron is restricted to authorized users",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "On many systems, only the system administrator is authorized to schedule `cron` jobs. Using the `cron.allow` file to control who can run `cron` jobs enforces this policy. It is easier to manage an allow list than a deny list. In a deny list, you could potentially add a user ID to the system and forget to add it to the deny files.",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following script to remove `/etc/cron.deny`, create `/etc/cron.allow`, and set the file mode on `/etc/cron.allow`: ``` #!/usr/bin/env bash  {  if rpm -q cronie >/dev/null; then  [ -e /etc/cron.deny ] && rm -f /etc/cron.deny  [ ! -e /etc/cron.allow ] && touch /etc/cron.allow  chown root:root /etc/cron.allow  chmod u-x,go-rwx /etc/cron.allow  else  echo \"cron is not installed on the system\"  fi } ```  **OR** Run the following command to remove `cron`:  ``` # dnf remove cronie ```",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following script:  ``` #!/usr/bin/env bash  {  if rpm -q cronie >/dev/null; then  [ -e /etc/cron.deny ] && echo \"Fail: cron.deny exists\"  if [ ! -e /etc/cron.allow ]; then   echo \"Fail: cron.allow doesn't exist\"  else  ! stat -Lc \"%a\" /etc/cron.allow | grep -Eq \"[0,2,4,6]00\" && echo \"Fail: cron.allow mode too permissive\"  ! stat -Lc \"%u:%g\" /etc/cron.allow | grep -Eq \"^0:0$\" && echo \"Fail: cron.allow owner and/or group not root\"  fi  if [ ! -e /etc/cron.deny ] && [ -e /etc/cron.allow ] && stat -Lc \"%a\" /etc/cron.allow | grep -Eq \"[0,2,4,6]00\" \\  && stat -Lc \"%u:%g\" /etc/cron.allow | grep -Eq \"^0:0$\"; then  echo \"Pass\"  fi  else  echo \"Pass: cron is not installed on the system\"  fi } ```  Verify the output of the script includes `Pass`",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Additional_Information",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "**NIST SP 800-53 Rev. 5:** - AC-3 - MP-2",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Configure Data Access Control Lists CONTROL:v8 3.3 DESCRIPTION:Configure data access control lists based on a user’s need to know. Apply data access control lists, also known as access permissions, to local and remote file systems, databases, and applications.;TITLE:Protect Information through Access Control Lists CONTROL:v7 14.6 DESCRIPTION:Protect all information stored on systems with file system, network share, claims, application, or database specific access control lists. These controls will enforce the principle that only authorized individuals should have access to the information based on their need to access the information as a part of their responsibilities.;\"",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "3.3",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "V8_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "14.6",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "V7_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "V7_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Group_Section_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Group_Title_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure time-based job schedulers",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Group_Description_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "`cron` is a time-based job scheduler used to schedule jobs, commands or shell scripts, to run periodically at fixed times, dates, or intervals.  `at` provides the ability to execute a command or shell script at a specified date and hour, or after a given interval of time.  Other methods exist for scheduling jobs, such as `systemd timers`. If another method is used, it should be secured in accordance with local site policy  _Note: `systemd timers` are systemd unit files whose name ends in `.timer` that control `.service` files or events. Timers can be used as an alternative to `cron` and `at`. Timers have built-in support for calendar time events, monotonic time events, and can be run asynchronously_  _If `cron` and `at` are not installed, this section can be skipped._",
+            "remarks": "rule_set_06"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.1.9",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "If `at` is installed in the system, configure `/etc/at.allow` to allow specific users to use these services. If `/etc/at.allow` does not exist, then `/etc/at.deny` is checked. Any user not specifically defined in those files is allowed to use at. By removing the file, only users in `/etc/at.allow` are allowed to use at.   **Note:** Even though a given user is not listed in `at.allow`, at jobs can still be run as that user. The `at.allow` file only controls administrative access to the at command for scheduling and modifying at jobs.",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 1 - Workstation; Level 1 - Server\"",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1.9",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure at is restricted to authorized users",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "On many systems, only the system administrator is authorized to schedule `at` jobs. Using the `at.allow` file to control who can run `at` jobs enforces this policy. It is easier to manage an allow list than a deny list. In a deny list, you could potentially add a user ID to the system and forget to add it to the deny files.",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following script to remove `/etc/at.deny`, create `/etc/at.allow`, and set the file mode for `/etc/at.allow`: ``` #!/usr/bin/env bash  {  if rpm -q at >/dev/null; then  [ -e /etc/at.deny ] && rm -f /etc/at.deny  [ ! -e /etc/at.allow ] && touch /etc/at.allow  chown root:root /etc/at.allow  chmod u-x,go-rwx /etc/at.allow  else  echo \"at is not installed on the system\"  fi } ```  **OR** Run the following command to remove `at`:  ``` # dnf remove at ```",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following script: ``` #!/usr/bin/env bash  {  if rpm -q at >/dev/null; then  [ -e /etc/at.deny ] && echo \"Fail: at.deny exists\"  if [ ! -e /etc/at.allow ]; then   echo \"Fail: at.allow doesn't exist\"  else  ! stat -Lc \"%a\" /etc/at.allow | grep -Eq \"[0,2,4,6]00\" && echo \"Fail: at.allow mode too permissive\"  ! stat -Lc \"%u:%g\" /etc/at.allow | grep -Eq \"^0:0$\" && echo \"Fail: at.allow owner and/or group not root\"  fi  if [ ! -e /etc/at.deny ] && [ -e /etc/at.allow ] && stat -Lc \"%a\" /etc/at.allow | grep -Eq \"[0,2,4,6]00\" \\  && stat -Lc \"%u:%g\" /etc/at.allow | grep -Eq \"^0:0$\"; then  echo \"Pass\"  fi  else  echo \"Pass: at is not installed on the system\"  fi } ```  Verify the output of the script includes `Pass`",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Additional_Information",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "**NIST SP 800-53 Rev. 5:** - AC-3 - MP-2",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Configure Data Access Control Lists CONTROL:v8 3.3 DESCRIPTION:Configure data access control lists based on a user’s need to know. Apply data access control lists, also known as access permissions, to local and remote file systems, databases, and applications.;TITLE:Protect Information through Access Control Lists CONTROL:v7 14.6 DESCRIPTION:Protect all information stored on systems with file system, network share, claims, application, or database specific access control lists. These controls will enforce the principle that only authorized individuals should have access to the information based on their need to access the information as a part of their responsibilities.;\"",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "3.3",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "V8_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "14.6",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "V7_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "V7_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Group_Section_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Group_Title_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure time-based job schedulers",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Group_Description_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "`cron` is a time-based job scheduler used to schedule jobs, commands or shell scripts, to run periodically at fixed times, dates, or intervals.  `at` provides the ability to execute a command or shell script at a specified date and hour, or after a given interval of time.  Other methods exist for scheduling jobs, such as `systemd timers`. If another method is used, it should be secured in accordance with local site policy  _Note: `systemd timers` are systemd unit files whose name ends in `.timer` that control `.service` files or events. Timers can be used as an alternative to `cron` and `at`. Timers have built-in support for calendar time events, monotonic time events, and can be run asynchronously_  _If `cron` and `at` are not installed, this section can be skipped._",
+            "remarks": "rule_set_07"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.12",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "The `X11Forwarding` parameter provides the ability to tunnel X11 traffic through the connection to enable remote graphic connections.",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 2 - Server; Level 1 - Workstation\"",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2.12",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure SSH X11 forwarding is disabled",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Disable X11 forwarding unless there is an operational requirement to use X11 applications directly. There is a small risk that the remote X11 servers of users who are logged in via SSH with X11 forwarding could be compromised by other users on the X11 server. Note that even if X11 forwarding is disabled, users can always install their own forwarders.",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Edit the `/etc/ssh/sshd_config` file to set the parameter as follows: ``` X11Forwarding no ```",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following command and verify that output matches: ``` # sshd -T -C user=root -C host=\"$(hostname)\" -C addr=\"$(grep $(hostname) /etc/hosts | awk '{print $1}')\" | grep -i x11forwarding  x11forwarding no ```  Run the following command and verify that the output matches: ``` # grep -Ei '^\\s*x11forwarding\\s+yes' /etc/ssh/sshd_config  Nothing is returned ```",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Additional_Information",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "**NIST SP 800-53 Rev. 5:** - CM-7",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Uninstall or Disable Unnecessary Services on Enterprise Assets and Software CONTROL:v8 4.8 DESCRIPTION:Uninstall or disable unnecessary services on enterprise assets and software, such as an unused file sharing service, web application module, or service function.;TITLE:Ensure Only Approved Ports, Protocols and Services Are Running CONTROL:v7 9.2 DESCRIPTION:Ensure that only network ports, protocols, and services listening on a system with validated business needs, are running on each system.;\"",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "4.8",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "9.2",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "V7_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Group_Section_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Group_Title_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure SSH Server",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Group_Description_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "SSH is a secure, encrypted replacement for common login services such as `telnet`, `ftp`, `rlogin`, `rsh`, and `rcp`. It is strongly recommended that sites abandon older clear-text login protocols and use SSH to prevent session hijacking and sniffing of sensitive data off the network.  **Note:** - The recommendations in this section only apply if the SSH daemon is installed on the system, if remote access is **not** required the SSH daemon can be removed and this section skipped. - Once all configuration changes have been made to `/etc/ssh/sshd_config`, the sshd configuration must be reloaded:  Command to re-load the SSH daemon configuration: ``` # systemctl reload sshd ```  Command to remove the SSH daemon: ``` # dnf remove openssh-server ```",
+            "remarks": "rule_set_08"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.13",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "SSH port forwarding is a mechanism in SSH for tunneling application ports from the client to the server, or servers to clients. It can be used for adding encryption to legacy applications, going through firewalls, and some system administrators and IT professionals use it for opening backdoors into the internal network from their home machines",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 2 - Workstation; Level 2 - Server\"",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2.13",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure SSH AllowTcpForwarding is disabled",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Leaving port forwarding enabled can expose the organization to security risks and back-doors.   SSH connections are protected with strong encryption. This makes their contents invisible to most deployed network monitoring and traffic filtering solutions. This invisibility carries considerable risk potential if it is used for malicious purposes such as data exfiltration. Cybercriminals or malware could exploit SSH to hide their unauthorized communications, or to exfiltrate stolen data from the target network",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Impact_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "SSH tunnels are widely used in many corporate environments that employ mainframe systems as their application backends. In those environments the applications themselves may have very limited native support for security. By utilizing tunneling, compliance with SOX, HIPAA, PCI-DSS, and other standards can be achieved without having to modify the applications.",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Edit the /etc/ssh/sshd_config file to set the parameter as follows: ``` AllowTcpForwarding no ```",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following command and verify that output matches: ``` # sshd -T -C user=root -C host=\"$(hostname)\" -C addr=\"$(grep $(hostname) /etc/hosts | awk '{print $1}')\" | grep -i allowtcpforwarding  allowtcpforwarding no ```  Run the following command and verify the output: ``` # grep -Ei '^\\s*AllowTcpForwarding\\s+yes' /etc/ssh/sshd_config  Nothing should be returned ```",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Additional_Information",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "**NIST SP 800-53 Rev. 5:** - CM-1 - CM-2 - CM-6 - CM-7 - IA-5",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Establish and Maintain a Secure Configuration Process CONTROL:v8 4.1 DESCRIPTION:Establish and maintain a secure configuration process for enterprise assets (end-user devices, including portable and mobile, non-computing/IoT devices, and servers) and software (operating systems and applications). Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.;TITLE:Ensure Only Approved Ports, Protocols and Services Are Running CONTROL:v7 9.2 DESCRIPTION:Ensure that only network ports, protocols, and services listening on a system with validated business needs, are running on each system.;\"",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "4.1",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "V8_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "9.2",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "V7_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "References",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "https://www.ssh.com/ssh/tunneling/example",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Group_Section_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Group_Title_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure SSH Server",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Group_Description_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "SSH is a secure, encrypted replacement for common login services such as `telnet`, `ftp`, `rlogin`, `rsh`, and `rcp`. It is strongly recommended that sites abandon older clear-text login protocols and use SSH to prevent session hijacking and sniffing of sensitive data off the network.  **Note:** - The recommendations in this section only apply if the SSH daemon is installed on the system, if remote access is **not** required the SSH daemon can be removed and this section skipped. - Once all configuration changes have been made to `/etc/ssh/sshd_config`, the sshd configuration must be reloaded:  Command to re-load the SSH daemon configuration: ``` # systemctl reload sshd ```  Command to remove the SSH daemon: ``` # dnf remove openssh-server ```",
+            "remarks": "rule_set_09"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.15",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "The `Banner` parameter specifies a file whose contents must be sent to the remote user before authentication is permitted. By default, no banner is displayed.",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 1 - Workstation; Level 1 - Server\"",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2.15",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure SSH warning banner is configured",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Banners are used to warn connecting users of the particular site's policy regarding connection. Presenting a warning message prior to the normal user login may assist the prosecution of trespassers on the computer system.",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Edit the `/etc/ssh/sshd_config` file to set the parameter as follows: ``` Banner /etc/issue.net ```",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following command and verify that output matches: ``` # sshd -T -C user=root -C host=\"$(hostname)\" -C addr=\"$(grep $(hostname) /etc/hosts | awk '{print $1}')\" | grep banner  banner /etc/issue.net ```",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Additional_Information",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "**NIST SP 800-53 Rev. 5:** - CM-1 - CM-2 - CM-6 - CM-7 - IA-5",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Establish and Maintain a Secure Configuration Process CONTROL:v8 4.1 DESCRIPTION:Establish and maintain a secure configuration process for enterprise assets (end-user devices, including portable and mobile, non-computing/IoT devices, and servers) and software (operating systems and applications). Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.;TITLE:Establish Secure Configurations CONTROL:v7 5.1 DESCRIPTION:Maintain documented, standard security configuration standards for all authorized operating systems and software.;\"",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "4.1",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "V8_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "V7_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "V7_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Group_Section_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Group_Title_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure SSH Server",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Group_Description_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "SSH is a secure, encrypted replacement for common login services such as `telnet`, `ftp`, `rlogin`, `rsh`, and `rcp`. It is strongly recommended that sites abandon older clear-text login protocols and use SSH to prevent session hijacking and sniffing of sensitive data off the network.  **Note:** - The recommendations in this section only apply if the SSH daemon is installed on the system, if remote access is **not** required the SSH daemon can be removed and this section skipped. - Once all configuration changes have been made to `/etc/ssh/sshd_config`, the sshd configuration must be reloaded:  Command to re-load the SSH daemon configuration: ``` # systemctl reload sshd ```  Command to remove the SSH daemon: ``` # dnf remove openssh-server ```",
+            "remarks": "rule_set_10"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.16",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "The `MaxAuthTries` parameter specifies the maximum number of authentication attempts permitted per connection. When the login failure count reaches half the number, error messages will be written to the `syslog` file detailing the login failure.",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 1 - Workstation; Level 1 - Server\"",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2.16",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure SSH MaxAuthTries is set to 4 or less",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Setting the `MaxAuthTries` parameter to a low number will minimize the risk of successful brute force attacks to the SSH server. While the recommended setting is 4, set the number based on site policy.",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Edit the `/etc/ssh/sshd_config` file to set the parameter as follows: ``` MaxAuthTries 4 ```",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following command and verify that output `MaxAuthTries` is 4 or less: ``` # sshd -T -C user=root -C host=\"$(hostname)\" -C addr=\"$(grep $(hostname) /etc/hosts | awk '{print $1}')\" | grep maxauthtries  maxauthtries 4 ```  Run the following command and verify that the output: ``` # grep -Ei '^\\s*maxauthtries\\s+([5-9]|[1-9][0-9]+)' /etc/ssh/sshd_config  Nothing is returned ```",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Additional_Information",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "**NIST SP 800-53 Rev. 5:** - AU-3 - AU-3(1)",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Collect Detailed Audit Logs CONTROL:v8 8.5 DESCRIPTION:Configure detailed audit logging for enterprise assets containing sensitive data. Include event source, date, username, timestamp, source addresses, destination addresses, and other useful elements that could assist in a forensic investigation.;TITLE:Alert on Account Login Behavior Deviation CONTROL:v7 16.13 DESCRIPTION:Alert when users deviate from normal login behavior, such as time-of-day, workstation location and duration.;\"",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "8.5",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "16.13",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "References",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "SSHD_CONFIG(5)",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Group_Section_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Group_Title_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure SSH Server",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Group_Description_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "SSH is a secure, encrypted replacement for common login services such as `telnet`, `ftp`, `rlogin`, `rsh`, and `rcp`. It is strongly recommended that sites abandon older clear-text login protocols and use SSH to prevent session hijacking and sniffing of sensitive data off the network.  **Note:** - The recommendations in this section only apply if the SSH daemon is installed on the system, if remote access is **not** required the SSH daemon can be removed and this section skipped. - Once all configuration changes have been made to `/etc/ssh/sshd_config`, the sshd configuration must be reloaded:  Command to re-load the SSH daemon configuration: ``` # systemctl reload sshd ```  Command to remove the SSH daemon: ``` # dnf remove openssh-server ```",
+            "remarks": "rule_set_11"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.17",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "The `MaxStartups` parameter specifies the maximum number of concurrent unauthenticated connections to the SSH daemon.",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 1 - Workstation; Level 1 - Server\"",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2.17",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure SSH MaxStartups is configured",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "To protect a system from denial of service due to a large number of pending authentication connection attempts, use the rate limiting function of MaxStartups to protect availability of sshd logins and prevent overwhelming the daemon.",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Edit the `/etc/ssh/sshd_config` file to set the parameter as follows:  ``` MaxStartups 10:30:60 ```",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following command and verify that output `MaxStartups` is `10:30:60` or more restrictive:  ``` # sshd -T -C user=root -C host=\"$(hostname)\" -C addr=\"$(grep $(hostname) /etc/hosts | awk '{print $1}')\" | grep -i maxstartups  maxstartups 10:30:60 ```  Run the following command and verify the output:  ``` # grep -Ei '^\\s*maxstartups\\s+(((1[1-9]|[1-9][0-9][0-9]+):([0-9]+):([0-9]+))|(([0-9]+):(3[1-9]|[4-9][0-9]|[1-9][0-9][0-9]+):([0-9]+))|(([0-9]+):([0-9]+):(6[1-9]|[7-9][0-9]|[1-9][0-9][0-9]+)))' /etc/ssh/sshd_config  Nothing should be returned ```",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Additional_Information",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "**NIST SP 800-53 Rev. 5:** - CM-1 - CM-2 - CM-6 - CM-7 - IA-5",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Establish and Maintain a Secure Configuration Process CONTROL:v8 4.1 DESCRIPTION:Establish and maintain a secure configuration process for enterprise assets (end-user devices, including portable and mobile, non-computing/IoT devices, and servers) and software (operating systems and applications). Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.;TITLE:Establish Secure Configurations CONTROL:v7 5.1 DESCRIPTION:Maintain documented, standard security configuration standards for all authorized operating systems and software.;\"",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "4.1",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "V8_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "V7_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "V7_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "References",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "SSHD_CONFIG(5)",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Group_Section_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Group_Title_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure SSH Server",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Group_Description_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "SSH is a secure, encrypted replacement for common login services such as `telnet`, `ftp`, `rlogin`, `rsh`, and `rcp`. It is strongly recommended that sites abandon older clear-text login protocols and use SSH to prevent session hijacking and sniffing of sensitive data off the network.  **Note:** - The recommendations in this section only apply if the SSH daemon is installed on the system, if remote access is **not** required the SSH daemon can be removed and this section skipped. - Once all configuration changes have been made to `/etc/ssh/sshd_config`, the sshd configuration must be reloaded:  Command to re-load the SSH daemon configuration: ``` # systemctl reload sshd ```  Command to remove the SSH daemon: ``` # dnf remove openssh-server ```",
+            "remarks": "rule_set_12"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.2.18",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "The `MaxSessions` parameter specifies the maximum number of open sessions permitted from a given connection.",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 1 - Workstation; Level 1 - Server\"",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2.18",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure SSH MaxSessions is set to 10 or less",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "To protect a system from denial of service due to a large number of concurrent sessions, use the rate limiting function of MaxSessions to protect availability of sshd logins and prevent overwhelming the daemon.",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Edit the `/etc/ssh/sshd_config` file to set the parameter as follows: ``` MaxSessions 10 ```",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following command and verify that output `MaxSessions` is `10` or less: ``` # sshd -T -C user=root -C host=\"$(hostname)\" -C addr=\"$(grep $(hostname) /etc/hosts | awk '{print $1}')\" | grep -i maxsessions  maxsessions 10 ```  Run the following command and verify the output: ``` grep -Ei '^\\s*MaxSessions\\s+(1[1-9]|[2-9][0-9]|[1-9][0-9][0-9]+)' /etc/ssh/sshd_config  Nothing should be returned ```",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Additional_Information",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "**NIST SP 800-53 Rev. 5:** - CM-1 - CM-2 - CM-6 - CM-7 - IA-5",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Establish and Maintain a Secure Configuration Process CONTROL:v8 4.1 DESCRIPTION:Establish and maintain a secure configuration process for enterprise assets (end-user devices, including portable and mobile, non-computing/IoT devices, and servers) and software (operating systems and applications). Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.;TITLE:Establish Secure Configurations CONTROL:v7 5.1 DESCRIPTION:Maintain documented, standard security configuration standards for all authorized operating systems and software.;\"",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "4.1",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "V8_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.1",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "V7_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "V7_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "References",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "SSHD_CONFIG(5)",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Group_Section_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Group_Title_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure SSH Server",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Group_Description_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "SSH is a secure, encrypted replacement for common login services such as `telnet`, `ftp`, `rlogin`, `rsh`, and `rcp`. It is strongly recommended that sites abandon older clear-text login protocols and use SSH to prevent session hijacking and sniffing of sensitive data off the network.  **Note:** - The recommendations in this section only apply if the SSH daemon is installed on the system, if remote access is **not** required the SSH daemon can be removed and this section skipped. - Once all configuration changes have been made to `/etc/ssh/sshd_config`, the sshd configuration must be reloaded:  Command to re-load the SSH daemon configuration: ``` # systemctl reload sshd ```  Command to remove the SSH daemon: ``` # dnf remove openssh-server ```",
+            "remarks": "rule_set_13"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.5.2",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Lock out users after _n_ unsuccessful consecutive login attempts.  - `deny=<n>` - Number of attempts before the account is locked - `unlock_time=<n>` - Time in seconds before the account is unlocked   **Note:** The maximum configurable value for `unlock_time` is `604800`",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 1 - Workstation; Level 1 - Server\"",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.5",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.5.2",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure lockout for failed password attempts is configured",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Locking out user IDs after _n_ unsuccessful consecutive login attempts mitigates brute force password attacks against your systems.",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Impact_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Use of `unlock_time=0` may allow an attacker to cause denial of service to legitimate users.",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Set password lockouts and unlock times to conform to site policy. `deny` should be greater than `0` and no greater than `5`. `unlock_time` should be `0` (never), or `900` seconds or greater.  Edit `/etc/security/faillock.conf` and update or add the following lines:  ``` deny = 5 unlock_time = 900 ```",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Verify password lockouts are configured. Depending on the version you are running, follow **one** of the two methods bellow.  - `deny` **should not** be `0` (never) or greater than `5` - `unlock_time` **should** be `0` (never) or `900` seconds or more.  Run the following command to verify that Number of failed logon attempts before the account is locked is no greater than `5`:  ``` # grep -E '^\\s*deny\\s*=\\s*[1-5]\\b' /etc/security/faillock.conf  deny = 5 ```  Run the following command to verify that the time in seconds before the account is unlocked is either `0` (never) or `900` or more.  ``` # grep -E '^\\s*unlock_time\\s*=\\s*(0|9[0-9][0-9]|[1-9][0-9][0-9][0-9]+)\\b' /etc/security/faillock.conf  unlock_time = 900 ```",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Additional_Information",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Additional module options may be set, recommendation only covers those listed here.  If a user has been locked out because they have reached the maximum consecutive failure count defined by `deny=` in the `pam_faillock.so` module, the user can be unlocked by issuing the command `faillock --user <USERNAME> --reset`. This command sets the failed count to 0, effectively unlocking the user.  Use of the \"audit\" keyword may log credentials in the case of user error during authentication. This risk should be evaluated in the context of the site policies of your organization.",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Establish an Access Revoking Process CONTROL:v8 6.2 DESCRIPTION:Establish and follow a process, preferably automated, for revoking access to enterprise assets, through disabling accounts immediately upon termination, rights revocation, or role change of a user. Disabling accounts, instead of deleting accounts, may be necessary to preserve audit trails.;TITLE:Establish Process for Revoking Access CONTROL:v7 16.7 DESCRIPTION:Establish and follow an automated process for revoking system access by disabling accounts immediately upon termination or change of responsibilities of an employee or contractor . Disabling these accounts, instead of deleting accounts, allows preservation of audit trails.;\"",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "6.2",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "V8_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "16.7",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "V7_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Group_Section_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.5",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Group_Title_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure PAM",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Group_Description_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "PAM (Pluggable Authentication Modules) is a service that implements modular authentication modules on UNIX systems. PAM is implemented as a set of shared objects that are loaded and executed when a program needs to authenticate a user. Files for PAM are typically located in the `/etc/pam.d` directory. PAM must be carefully configured to secure system authentication. While this section covers some of PAM, please consult other PAM resources to fully understand the configuration capabilities.",
+            "remarks": "rule_set_14"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.5.3",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "The `/etc/security/opasswd` file stores the users' old passwords and can be checked to ensure that users are not recycling recent passwords.  - remember=<5> - Number of old passwords to remember",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 1 - Workstation; Level 1 - Server\"",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.5",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.5.3",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure password reuse is limited",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Forcing users not to reuse their past 5 passwords make it less likely that an attacker will be able to guess the password.  **Note:** These change only apply to accounts configured on the local system.",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Set remembered password history to conform to site policy.   Run the following script to add or modify the `pam_pwhistory.so` and `pam_unix.so` lines to include the `remember` option:  ``` #!/usr/bin/env bash  {  file=\"/etc/authselect/$(head -1 /etc/authselect/authselect.conf | grep 'custom/')/system-auth\"  if ! grep -Pq -- '^\\h*password\\h+(requisite|required|sufficient)\\h+pam_pwhistory\\.so\\h+([^#\\n\\r]+\\h+)?remember=([5-9]|[1-9][0-9]+)\\b.*$' \"$file\"; then  if grep -Pq -- '^\\h*password\\h+(requisite|required|sufficient)\\h+pam_pwhistory\\.so\\h+([^#\\n\\r]+\\h+)?remember=\\d+\\b.*$' \"$file\"; then  sed -ri 's/^\\s*(password\\s+(requisite|required|sufficient)\\s+pam_pwhistory\\.so\\s+([^#\\n\\r]+\\s+)?)(remember=\\S+\\s*)(\\s+.*)?$/\\1 remember=5 \\5/' $file  elif grep -Pq -- '^\\h*password\\h+(requisite|required|sufficient)\\h+pam_pwhistory\\.so\\h+([^#\\n\\r]+\\h+)?.*$' \"$file\"; then  sed -ri '/^\\s*password\\s+(requisite|required|sufficient)\\s+pam_pwhistory\\.so/ s/$/ remember=5/' $file  else  sed -ri '/^\\s*password\\s+(requisite|required|sufficient)\\s+pam_unix\\.so/i password required pam_pwhistory.so remember=5 use_authtok' $file  fi  fi  if ! grep -Pq -- '^\\h*password\\h+(requisite|required|sufficient)\\h+pam_unix\\.so\\h+([^#\\n\\r]+\\h+)?remember=([5-9]|[1-9][0-9]+)\\b.*$' \"$file\"; then  if grep -Pq -- '^\\h*password\\h+(requisite|required|sufficient)\\h+pam_unix\\.so\\h+([^#\\n\\r]+\\h+)?remember=\\d+\\b.*$' \"$file\"; then  sed -ri 's/^\\s*(password\\s+(requisite|required|sufficient)\\s+pam_unix\\.so\\s+([^#\\n\\r]+\\s+)?)(remember=\\S+\\s*)(\\s+.*)?$/\\1 remember=5 \\5/' $file  else  sed -ri '/^\\s*password\\s+(requisite|required|sufficient)\\s+pam_unix\\.so/ s/$/ remember=5/' $file  fi  fi  authselect apply-changes } ```",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following command and verify that the remembered password history is `5` or more  ``` # grep -P '^\\h*password\\h+(requisite|sufficient)\\h+(pam_pwhistory\\.so|pam_unix\\.so)\\h+([^#\\n\\r]+\\h+)?remember=([5-9]|[1-9][0-9]+)\\h*(\\h+.*)?$' /etc/pam.d/system-auth ```  The output should be similar to: ``` password requisite pam_pwhistory.so try_first_pass local_users_only enforce_for_root retry=3 remember=5 password sufficient pam_unix.so sha512 shadow try_first_pass use_authtok remember=5 ```",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Additional_Information",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Additional module options may be set, recommendation only covers those listed here.  **NIST SP 800-53 Rev. 5:** - IA-5(1)",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Use Unique Passwords CONTROL:v8 5.2 DESCRIPTION:Use unique passwords for all enterprise assets. Best practice implementation includes, at a minimum, an 8-character password for accounts using MFA and a 14-character password for accounts not using MFA. ;TITLE:Use Unique Passwords CONTROL:v7 4.4 DESCRIPTION:Where multi-factor authentication is not supported (such as local administrator, root, or service accounts), accounts will use passwords that are unique to that system.;\"",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.2",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "V8_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "4.4",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "V7_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Group_Section_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.5",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Group_Title_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Configure PAM",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Group_Description_Level_1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "PAM (Pluggable Authentication Modules) is a service that implements modular authentication modules on UNIX systems. PAM is implemented as a set of shared objects that are loaded and executed when a program needs to authenticate a user. Files for PAM are typically located in the `/etc/pam.d` directory. PAM must be carefully configured to secure system authentication. While this section covers some of PAM, please consult other PAM resources to fully understand the configuration capabilities.",
+            "remarks": "rule_set_15"
+          },
+          {
+            "name": "Rule_Id",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "CIS-5.6.1.1",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Rule_Description",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "The `PASS_MAX_DAYS` parameter in `/etc/login.defs` allows an administrator to force passwords to expire once they reach a defined age. It is recommended that the `PASS_MAX_DAYS` parameter be set to less than or equal to 365 days.",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Profile",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"Level 1 - Workstation; Level 1 - Server\"",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Section",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.6.1",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Recommendation",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.6.1.1",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Title",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Ensure password expiration is 365 days or less",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Assessment_Status",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Automated",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Rationale_Statement",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "The window of opportunity for an attacker to leverage compromised credentials or successfully compromise credentials via an online brute force attack is limited by the age of the password. Therefore, reducing the maximum age of a password also reduces an attacker's window of opportunity.",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Remediation_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Set the `PASS_MAX_DAYS` parameter to conform to site policy in `/etc/login.defs` :  ``` PASS_MAX_DAYS 365 ```  Modify user parameters for all users with a password set to match:  ``` # chage --maxdays 365 <user> ```",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Audit_Procedure",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Run the following command and verify `PASS_MAX_DAYS` conforms to site policy (no more than 365 days):  ``` # grep PASS_MAX_DAYS /etc/login.defs  PASS_MAX_DAYS 365 ```  Run the following command and Review list of users and PASS_MAX_DAYS to verify that all users' PASS_MAX_DAYS conforms to site policy (no more than 365 days):  ``` # grep -E '^[^:]+:[^!*]' /etc/shadow | cut -d: -f1,5  <user>:<PASS_MAX_DAYS> ```",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Additional_Information",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "You can also check this setting in `/etc/shadow` directly. The 5th field should be 365 or less for all users with a password.  **Note:** A value of -1 will disable password expiration. Additionally, the password expiration must be greater than the minimum days between password changes or users will be unable to change their password.  **NIST SP 800-53 Rev. 5:** - CM-1 - CM-2 - CM-6 - CM-7 - IA-5",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Cis_Controls",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "\"TITLE:Establish and Maintain a Secure Configuration Process CONTROL:v8 4.1 DESCRIPTION:Establish and maintain a secure configuration process for enterprise assets (end-user devices, including portable and mobile, non-computing/IoT devices, and servers) and software (operating systems and applications). Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.;TITLE:Use Unique Passwords CONTROL:v7 4.4 DESCRIPTION:Where multi-factor authentication is not supported (such as local administrator, root, or service accounts), accounts will use passwords that are unique to that system.;\"",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Cis_Safeguards_1_V8",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "4.1",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "V8_Ig1",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "V8_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "V8_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Cis_Safeguards_1_V7",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "4.4",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "V7_Ig2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "V7_Ig3",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "X",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Group_Section_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Group_Title_Level_0",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Access, Authentication and Authorization",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Group_Section_Level_2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "5.6.1",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Group_Title_Level_2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "Set Shadow Password Suite Parameters",
+            "remarks": "rule_set_16"
+          },
+          {
+            "name": "Group_Description_Level_2",
+            "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+            "value": "While a majority of the password control parameters have been moved to PAM, some parameters are still available through the shadow password suite. Any changes made to `/etc/login.defs `will only be applied if the `usermod `command is used. If user IDs are added a different way, use the `chage `command to effect changes to individual user IDs.",
+            "remarks": "rule_set_16"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "c3474ac2-2c7a-49e9-a198-162a421fca11",
+            "source": "catalogs/cis-v8/catalog.json",
+            "description": "CIS catalog v8",
+            "implemented-requirements": [
+              {
+                "uuid": "dcdcf9d3-935e-419b-b774-6bc9857ace89",
+                "control-id": "cisc-3.3",
+                "description": "",
+                "props": [
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.1.2"
+                  },
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.1.3"
+                  },
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.1.4"
+                  },
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.1.5"
+                  },
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.1.6"
+                  },
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.1.7"
+                  },
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.1.8"
+                  },
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.1.9"
+                  }
+                ]
+              },
+              {
+                "uuid": "c89b07fb-381f-4237-8221-25ab01482eac",
+                "control-id": "cisc-4.8",
+                "description": "",
+                "props": [
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.2.12"
+                  }
+                ]
+              },
+              {
+                "uuid": "e397f4bf-dbcf-4bd0-b3f0-63dadaa5d94b",
+                "control-id": "cisc-4.1",
+                "description": "",
+                "props": [
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.2.13"
+                  },
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.2.15"
+                  },
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.2.17"
+                  },
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.2.18"
+                  },
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.6.1.1"
+                  }
+                ]
+              },
+              {
+                "uuid": "52f4854b-b1b0-498b-9d61-e1cdde4503ca",
+                "control-id": "cisc-8.5",
+                "description": "",
+                "props": [
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.2.16"
+                  }
+                ]
+              },
+              {
+                "uuid": "49dd7c8b-8028-4afe-8f6b-da24b899b9fe",
+                "control-id": "cisc-6.2",
+                "description": "",
+                "props": [
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.5.2"
+                  }
+                ]
+              },
+              {
+                "uuid": "b69ad889-31f7-4bfb-be0d-e2c43ffc34a8",
+                "control-id": "cisc-5.2",
+                "description": "",
+                "props": [
+                  {
+                    "name": "Rule_Id",
+                    "ns": "https://oscal-compass/compliance-trestle/schemas/oscal/cd",
+                    "value": "CIS-5.5.3"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
