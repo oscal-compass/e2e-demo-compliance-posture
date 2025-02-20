@@ -120,7 +120,7 @@ class CompliancePosture():
                     
                     self.markdown_helper.add_line('<table>')
                     
-                    th_color = 'cornflowerblue'
+                    th_color = 'lightblue'
                     
                     self.markdown_helper.add_line('<tr>')
                     self.markdown_helper.add_line(f'<th align= "left", bgcolor="{th_color}">')

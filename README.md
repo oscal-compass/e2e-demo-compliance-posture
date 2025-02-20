@@ -4,7 +4,7 @@ End-to-End Demo: Policy as Code RHEL9 results
 This repo comprises Compliance Posture for the end-to-end demo.
 
 The [demo overview](https://github.com/oscal-compass/e2e-demo).
-Last updated: *2025-02-20 10:59:17*
+Last updated: *2025-02-20 11:01:58*
 
 <hr>
 <hr>
@@ -16,13 +16,13 @@ host: RHEL-Soma-CIS-Test1.fyre.ibm.com
 </h3>
 <table>
 <tr>
-<th align= "left", bgcolor="cornflowerblue">
+<th align= "left", bgcolor="lightblue">
 control
-<th align= "left", bgcolor="cornflowerblue">
+<th align= "left", bgcolor="lightblue">
 rule
-<th align= "left", bgcolor="cornflowerblue">
+<th align= "left", bgcolor="lightblue">
 check
-<th align= "left", bgcolor="cornflowerblue">
+<th align= "left", bgcolor="lightblue">
 status
 <tr>
 <td align= "left", bgcolor="ghostwhite">
