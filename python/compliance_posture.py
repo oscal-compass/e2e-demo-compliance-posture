@@ -117,31 +117,38 @@ class CompliancePosture():
                     self.markdown_helper.add_line('<h3>')
                     self.markdown_helper.add_line(f'host: {host}')
                     self.markdown_helper.add_line('</h3>')
-                
-                    self.markdown_helper.add_line('<style>')
-                    self.markdown_helper.add_line('table, th, td {')
-                    self.markdown_helper.add_line('border: 1px solid black;')
-                    self.markdown_helper.add_line('border-collapse: collapse;')
-                    self.markdown_helper.add_line('padding: 15px;')
-                    self.markdown_helper.add_line('}')
-                    self.markdown_helper.add_line('</style>')
                     
                     self.markdown_helper.add_line('<table>')
                     
+                    th_color = 'cornflowerblue'
+                    
                     self.markdown_helper.add_line('<tr>')
-                    self.markdown_helper.add_line('<th align= "left", bgcolor="lightgray">')
+                    self.markdown_helper.add_line(f'<th align= "left", bgcolor="{th_color}">')
                     self.markdown_helper.add_line('control')
-                    self.markdown_helper.add_line('<th align= "left", bgcolor="lightgray">')
+                    self.markdown_helper.add_line(f'<th align= "left", bgcolor="{th_color}">')
                     self.markdown_helper.add_line('rule')
-                    self.markdown_helper.add_line('<th align= "left", bgcolor="lightgray">')
+                    self.markdown_helper.add_line(f'<th align= "left", bgcolor="{th_color}">')
                     self.markdown_helper.add_line('check')
-                    self.markdown_helper.add_line('<th align= "left", bgcolor="lightgray">')
+                    self.markdown_helper.add_line(f'<th align= "left", bgcolor="{th_color}">')
                     self.markdown_helper.add_line('status')
+                    
+                    td_color_odd = 'ghostwhite'
+                    td_color_even = 'linen'
+                    
+                    td_flag = False
                     
                     for control in control_map.keys():
                         
                         rule_check_pair_list = control_map[control]
                         for rule_check_pair in rule_check_pair_list:
+                            
+                            if td_flag:
+                                td_flag = False
+                                td_color = td_color_even
+                            else:
+                                td_flag = True
+                                td_color = td_color_odd
+                            
                             rule = rule_check_pair[0]
                             check = rule_check_pair[1]
                         
@@ -154,13 +161,13 @@ class CompliancePosture():
                                 image = '<img src="images/Basic_gold_dot.png" width="12" height="12">'
                             
                             self.markdown_helper.add_line('<tr>')
-                            self.markdown_helper.add_line('<th align= "left">')
+                            self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
                             self.markdown_helper.add_line(f'{control}')
-                            self.markdown_helper.add_line('<th align= "left">')
+                            self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
                             self.markdown_helper.add_line(f'{rule}')
-                            self.markdown_helper.add_line('<th align= "left">')
+                            self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
                             self.markdown_helper.add_line(f'{check}')
-                            self.markdown_helper.add_line('<th align= "left">')
+                            self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
                             self.markdown_helper.add_line(f'{image} {status}')
                     
                     self.markdown_helper.add_line('</table>')
