@@ -4,10 +4,13 @@ End-to-End Demo: Policy as Code RHEL9 results
 This repo comprises Compliance Posture for the end-to-end demo.
 
 The [demo overview](https://github.com/oscal-compass/e2e-demo).
-Last updated: *2025-02-20 11:01:58*
+Last updated: *2025-02-21 07:27:10*
 
 <hr>
 <hr>
+<h2>
+CIS Red Hat Enterprise Linux 9 Benchmark 1.1.0
+</h2>
 <h2>
 type: rhel9
 </h2>

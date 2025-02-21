@@ -24,6 +24,20 @@ class ComponentDefinitionHelper():
         """Initialize."""
         with open(ipath, 'r') as f:
             self.jdata = json.load(f)
+        
+    def get_title(self) -> str:
+        """Get title."""       
+        cdef = self.jdata['component-definition']
+        metadata = cdef['metadata']
+        title = metadata['title']
+        return title
+                
+    def get_version(self) -> str:
+        """Get version."""       
+        cdef = self.jdata['component-definition']
+        metadata = cdef['metadata']
+        version = metadata['version']
+        return version
     
     def get_rules(self) -> List[str]:
         """Get rules."""       

@@ -106,7 +106,13 @@ class CompliancePosture():
             if type not in type_list:
                 type_list.append(type)
         
+        title = self.software_helper.get_title()
+        version = self.software_helper.get_version()
+        
         for type in type_list:
+            self.markdown_helper.add_line('<h2>')
+            self.markdown_helper.add_line(f'{title} {version}')
+            self.markdown_helper.add_line('</h2>')
             self.markdown_helper.add_line('<h2>')
             self.markdown_helper.add_line(f'type: {type}')
             self.markdown_helper.add_line('</h2>')
