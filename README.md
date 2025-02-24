@@ -4,7 +4,7 @@ End-to-End Demo: Policy as Code RHEL9 results
 This repo comprises Compliance Posture for the end-to-end demo.
 
 The [demo overview](https://github.com/oscal-compass/e2e-demo).
-Last updated: *2025-02-21 07:27:10*
+Last updated: *2025-02-24 11:55:27*
 
 <hr>
 <hr>
@@ -91,6 +91,8 @@ sshd_idle_timeout_value=5_minutes
 <td align= "left", bgcolor="ghostwhite">
 <img src="images/Basic_gold_dot.png" width="12" height="12"> unknown
 </table>
+<br/>
+Note: status "unknown" (if any) indicates that a result was not found for the given check
 <br/>
 <hr>
 <hr>

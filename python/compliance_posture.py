@@ -70,6 +70,7 @@ class CompliancePosture():
         
         control_map = {}
         
+        # rules in sw comp def drive
         for rule in rules_sw:
             if rule not in rules_val:
                 logger.warning(f'software rule missing from validation -> {rule}')
@@ -77,6 +78,7 @@ class CompliancePosture():
                 sw_rule_set = self.software_helper.get_rule_set(rule)
                 control = self.software_helper.get_control(sw_rule_set)
                 val_rule_set = self.validation_helper.get_rule_set(rule)
+                # presume 1:1 rule-to-check (for now)
                 check = self.validation_helper.get_check(val_rule_set)
                 logger.info(f'control: {control} rule: {rule} check: {check}')
                 if control not in control_map.keys():
@@ -177,6 +179,11 @@ class CompliancePosture():
                             self.markdown_helper.add_line(f'{image} {status}')
                     
                     self.markdown_helper.add_line('</table>')
+            
+            self.markdown_helper.add_line('<br/>')
+            
+            text = 'Note: status "unknown" (if any) indicates that a result was not found for the given check'
+            self.markdown_helper.add_line(f'{text}')
             
             self.markdown_helper.add_line('<br/>')
             
