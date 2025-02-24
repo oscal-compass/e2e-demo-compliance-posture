@@ -167,6 +167,8 @@ class CompliancePosture():
                                 image = '<img src="images/Basic_red_dot.png" width="12" height="12">'
                             else:
                                 image = '<img src="images/Basic_gold_dot.png" width="12" height="12">'
+                                if status == 'unknown':
+                                    status = f'<i title="result not found for given check">{status}</i>'
                             
                             self.markdown_helper.add_line('<tr>')
                             self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
@@ -181,9 +183,6 @@ class CompliancePosture():
                     self.markdown_helper.add_line('</table>')
             
             self.markdown_helper.add_line('<br/>')
-            
-            text = 'Note: status "unknown" (if any) indicates that a result was not found for the given check'
-            self.markdown_helper.add_line(f'{text}')
             
             self.markdown_helper.add_line('<br/>')
             
