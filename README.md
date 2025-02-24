@@ -4,7 +4,7 @@ End-to-End Demo: Policy as Code RHEL9 results
 This repo comprises Compliance Posture for the end-to-end demo.
 
 The [demo overview](https://github.com/oscal-compass/e2e-demo).
-Last updated: *2025-02-24 19:33:19*
+Last updated: *2025-02-24 19:38:58*
 
 <hr>
 <hr>
@@ -35,7 +35,7 @@ CIS-5.1.2
 <td align= "left", bgcolor="ghostwhite">
 file_permissions_sshd_private_key
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="linen">
 3.3
