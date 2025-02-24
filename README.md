@@ -4,7 +4,7 @@ End-to-End Demo: Policy as Code RHEL9 results
 This repo comprises Compliance Posture for the end-to-end demo.
 
 The [demo overview](https://github.com/oscal-compass/e2e-demo).
-Last updated: *2025-02-24 19:28:47*
+Last updated: *2025-02-24 19:33:19*
 
 <hr>
 <hr>
