@@ -184,12 +184,9 @@ class CompliancePosture():
             
             self.markdown_helper.add_line('<br/>')
             
-            self.markdown_helper.add_line('<br/>')
-            
             self.markdown_helper.add_line('<hr>')
             self.markdown_helper.add_line('<hr>')
             
-            self.markdown_helper.add_line('<br/>')
             self.markdown_helper.add_line('<br/>')
             self.markdown_helper.add_line('<br/>')
         
