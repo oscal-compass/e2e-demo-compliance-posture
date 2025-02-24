@@ -41447,7 +41447,7 @@
             {
               "name": "result",
               "ns": "https://oscal-compass.github.io/compliance-trestle/schemas/oscal/ar/OpenSCAP",
-              "value": "fail"
+              "value": "pass"
             },
             {
               "name": "time",
