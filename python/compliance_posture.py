@@ -11,87 +11,193 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+"""OSCAL transformation tasks."""
 import argparse
-import logging
 import pathlib
 from datetime import datetime
+from typing import Dict, List
 
 from component_definition_helper import ComponentDefinitionHelper
+
 from markdown_helper import MarkdownHelper
+
 from observations_helper import ObservationsHelper
 
-logger = logging.getLogger()
-logging.basicConfig(format="%(levelname)s: %(message)s")
+
+class TableFormat():
+    """Table format."""
+
+    def __init__(self) -> None:
+        """Initialize."""
+        self.th_color = 'lightblue'
+        self.td_color_odd = 'ghostwhite'
+        self.td_color_even = 'linen'
+        self.state = False
+
+    def get_th(self) -> str:
+        """Get th."""
+        return self.th_color
+
+    def get_td(self) -> str:
+        """Get td."""
+        if self.state:
+            rval = self.td_color_odd
+        else:
+            rval = self.td_color_even
+        self.state = not self.state
+        return rval
 
 
 class CompliancePosture():
     """Compliance posture."""
-    
+
     def __init__(self) -> None:
         """Initialize."""
         parser = argparse.ArgumentParser()
         parser.add_argument('--markdown', required=True, help='output file comprising compliance posture markdown')
         parser.add_argument('--observations', required=True, help='input file comprising OSCAL observations')
-        parser.add_argument('--software', required=True, help='input file comprising OSCAL software component definition')
-        parser.add_argument('--validation', required=True, help='input file comprising OSCAL validation component definition')
+        parser.add_argument(
+            '--software', required=True, help='input file comprising OSCAL software component definition'
+        )
+        parser.add_argument(
+            '--validation', required=True, help='input file comprising OSCAL validation component definition'
+        )
         self.args = parser.parse_args()
         self._init_markdown_helper()
         self._init_observations_helper()
         self._init_software_helper()
         self._init_validation_helper()
-        
+
     def _init_markdown_helper(self):
         """Initialize markdown helper."""
         ipath = pathlib.Path(self.args.markdown)
         self.markdown_helper = MarkdownHelper(ipath)
-            
+
     def _init_observations_helper(self):
         """Initialize observations helper."""
         ipath = pathlib.Path(self.args.observations)
         self.observations_helper = ObservationsHelper(ipath)
-                
+
     def _init_software_helper(self):
         """Initialize software helper."""
         ipath = pathlib.Path(self.args.software)
         self.software_helper = ComponentDefinitionHelper(ipath)
-                        
+
     def _init_validation_helper(self):
         """Initialize validation helper."""
         ipath = pathlib.Path(self.args.validation)
         self.validation_helper = ComponentDefinitionHelper(ipath)
-        
+
+    def _calculate_posture_by_control(self, inventory_item: Dict, control_tuples: List[str]):
+        """Calculate posture by control."""
+        summary = {}
+        host = inventory_item['host_name']
+        for control_tuple in control_tuples:
+            control_id = control_tuple[0]
+            check_id = control_tuple[2]
+            if control_id not in summary.keys():
+                summary[control_id] = None
+            status = self.observations_helper.get_status(host, check_id)
+            if summary[control_id] is None:
+                summary[control_id] = status
+            elif summary[control_id] == 'pass':
+                summary[control_id] = status
+        return summary
+
+    def _calculate_posture_by_rule(self, inventory_item: Dict, control_tuples: List[str]):
+        """Calculate posture by rule."""
+        summary = {}
+        host = inventory_item['host_name']
+        for control_tuple in control_tuples:
+            control_id = control_tuple[0]
+            rule_id = control_tuple[1]
+            check_id = control_tuple[2]
+            if control_id not in summary.keys():
+                summary[control_id] = {}
+            if rule_id not in summary[control_id].keys():
+                summary[control_id][rule_id] = None
+            status = self.observations_helper.get_status(host, check_id)
+            if summary[control_id][rule_id] is None:
+                summary[control_id][rule_id] = status
+            elif summary[control_id][rule_id] == 'pass':
+                summary[control_id][rule_id] = status
+        return summary
+
+    def _display_controls(self, iteration, inventory_item, control_tuples, table_format):
+        """Display controls."""
+        postures = self._calculate_posture_by_control(inventory_item, control_tuples)
+        for control_id in postures.keys():
+            status = postures[control_id]
+            if status == 'pass':
+                image = '<img src="images/Basic_green_dot.png" width="12" height="12">'
+            elif status == 'fail':
+                image = '<img src="images/Basic_red_dot.png" width="12" height="12">'
+            else:
+                image = '<img src="images/Basic_gold_dot.png" width="12" height="12">'
+            if status == 'unknown':
+                status = f'<i title="result not found for given check">{status}</i>'
+            td_color = table_format.get_td()
+            self.markdown_helper.add_line('<tr>')
+            self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
+            self.markdown_helper.add_line(f'{control_id}')
+            self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
+            self.markdown_helper.add_line(f'{image} ')
+            self.markdown_helper.add_line(f'{status}')
+
+            if iteration > 1:
+                self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
+                self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
+                self._display_rules(iteration, inventory_item, control_tuples, table_format, control_id)
+
+    def _display_rules(self, iteration, inventory_item, control_tuples, table_format, control_id):
+        """Display rules."""
+        postures = self._calculate_posture_by_rule(inventory_item, control_tuples)
+        for rule_id in postures[control_id].keys():
+            status = postures[control_id][rule_id]
+            if status == 'pass':
+                image = '<img src="images/Basic_green_dot.png" width="12" height="12">'
+            elif status == 'fail':
+                image = '<img src="images/Basic_red_dot.png" width="12" height="12">'
+            else:
+                image = '<img src="images/Basic_gold_dot.png" width="12" height="12">'
+            if status == 'unknown':
+                status = f'<i title="result not found for given check">{status}</i>'
+            td_color = table_format.get_td()
+            self.markdown_helper.add_line('<tr>')
+            self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
+            self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
+            self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
+            self.markdown_helper.add_line(f'{rule_id}')
+            self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
+            self.markdown_helper.add_line(f'{image} {status}')
+
+            if iteration > 2:
+                self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
+                self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
+                self._display_checks(iteration, inventory_item, control_tuples, table_format, control_id, rule_id)
+
     def process(self):
         """Process."""
         inventory = self.observations_helper.get_inventory()
-        
-        rules_sw = self.software_helper.get_rules()
-        rules_val = self.validation_helper.get_rules()
-        
-        control_map = {}
-        
-        # rules in sw comp def drive
-        for rule in rules_sw:
-            if rule not in rules_val:
-                logger.warning(f'software rule missing from validation -> {rule}')
-            else:
-                sw_rule_set = self.software_helper.get_rule_set(rule)
-                control = self.software_helper.get_control(sw_rule_set)
-                val_rule_set = self.validation_helper.get_rule_set(rule)
-                # presume 1:1 rule-to-check (for now)
-                check = self.validation_helper.get_check(val_rule_set)
-                logger.info(f'control: {control} rule: {rule} check: {check}')
-                if control not in control_map.keys():
-                    control_map[control] = []
-                rule_check_pair = [rule, check]
-                control_map[control].append(rule_check_pair)
-        
+
+        control_tuples = []
+
+        control_id_list = self.software_helper.get_controls()
+        for control_id in control_id_list:
+            rule__id_list = self.software_helper.get_rules_for_control(control_id)
+            for rule_id in rule__id_list:
+                check_id_list = self.validation_helper.get_checks_for_rule(rule_id)
+                for check_id in check_id_list:
+                    control_tuple = (control_id, rule_id, check_id)
+                    control_tuples.append(control_tuple)
+
         self.markdown_helper.add_line('# End-to-End Demo: Compliance Posture')
-        self.markdown_helper.add_line('End-to-End Demo: Policy as Code RHEL9 results')
+        self.markdown_helper.add_line('End-to-End Demo: Policy as Code Ubuntu results')
         self.markdown_helper.add_line('')
         self.markdown_helper.add_line('This repo comprises Compliance Posture for the end-to-end demo.')
         self.markdown_helper.add_line('')
         self.markdown_helper.add_line('The [demo overview](https://github.com/oscal-compass/e2e-demo).')
+        self.markdown_helper.add_line('')
         
         now = datetime.now()
         datetime_without_ms = now.strftime('%Y-%m-%d %H:%M:%S')
@@ -104,99 +210,90 @@ class CompliancePosture():
         type_list = []
         for key in inventory.keys():
             inventory_item = inventory[key]
-            type = inventory_item['target_type']
-            if type not in type_list:
-                type_list.append(type)
-        
+            tgt_type = inventory_item['target_type']
+            if tgt_type not in type_list:
+                type_list.append(tgt_type)
+
         title = self.software_helper.get_title()
         version = self.software_helper.get_version()
-        
-        for type in type_list:
+
+        for tgt_type in type_list:
             self.markdown_helper.add_line('<h2>')
             self.markdown_helper.add_line(f'{title} {version}')
             self.markdown_helper.add_line('</h2>')
             self.markdown_helper.add_line('<h2>')
-            self.markdown_helper.add_line(f'type: {type}')
+            self.markdown_helper.add_line(f'type: {tgt_type}')
             self.markdown_helper.add_line('</h2>')
+
             for key in inventory.keys():
                 inventory_item = inventory[key]
-                if inventory_item['target_type'] == type:
+
+                if inventory_item['target_type'] == tgt_type:
                     host = inventory_item['host_name']
                     self.markdown_helper.add_line('<h3>')
                     self.markdown_helper.add_line(f'host: {host}')
                     self.markdown_helper.add_line('</h3>')
-                    
-                    self.markdown_helper.add_line('<table>')
-                    
-                    th_color = 'lightblue'
-                    
-                    self.markdown_helper.add_line('<tr>')
-                    self.markdown_helper.add_line(f'<th align= "left", bgcolor="{th_color}">')
-                    self.markdown_helper.add_line('control')
-                    self.markdown_helper.add_line(f'<th align= "left", bgcolor="{th_color}">')
-                    self.markdown_helper.add_line('rule')
-                    self.markdown_helper.add_line(f'<th align= "left", bgcolor="{th_color}">')
-                    self.markdown_helper.add_line('check')
-                    self.markdown_helper.add_line(f'<th align= "left", bgcolor="{th_color}">')
-                    self.markdown_helper.add_line('status')
-                    
-                    td_color_odd = 'ghostwhite'
-                    td_color_even = 'linen'
-                    
-                    td_flag = False
-                    
-                    for control in control_map.keys():
-                        
-                        rule_check_pair_list = control_map[control]
-                        for rule_check_pair in rule_check_pair_list:
-                            
-                            if td_flag:
-                                td_flag = False
-                                td_color = td_color_even
-                            else:
-                                td_flag = True
-                                td_color = td_color_odd
-                            
-                            rule = rule_check_pair[0]
-                            check = rule_check_pair[1]
-                        
-                            status = self.observations_helper.get_status(host, check)
-                            if status == 'pass':
-                                image = '<img src="images/Basic_green_dot.png" width="12" height="12">'
-                            elif status == 'fail':
-                                image = '<img src="images/Basic_red_dot.png" width="12" height="12">'
-                            else:
-                                image = '<img src="images/Basic_gold_dot.png" width="12" height="12">'
-                                if status == 'unknown':
-                                    status = f'<i title="result not found for given check">{status}</i>'
-                            
-                            self.markdown_helper.add_line('<tr>')
-                            self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
-                            self.markdown_helper.add_line(f'{control}')
-                            self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
-                            self.markdown_helper.add_line(f'{rule}')
-                            self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
-                            self.markdown_helper.add_line(f'{check}')
-                            self.markdown_helper.add_line(f'<td align= "left", bgcolor="{td_color}">')
-                            self.markdown_helper.add_line(f'{image} {status}')
-                    
-                    self.markdown_helper.add_line('</table>')
-            
+
+                    for iteration in [1, 2]:
+
+                        if iteration == 1:
+                            self.markdown_helper.add_line('<details open>')
+                            self.markdown_helper.add_line('<summary>')
+                            self.markdown_helper.add_line('<b>')
+                            self.markdown_helper.add_line('Status by control')
+                            self.markdown_helper.add_line('</b>')
+                            self.markdown_helper.add_line('</summary>')
+                        elif iteration == 2:
+                            self.markdown_helper.add_line('<details>')
+                            self.markdown_helper.add_line('<summary>')
+                            self.markdown_helper.add_line('<b>')
+                            self.markdown_helper.add_line('Status by control + rule')
+                            self.markdown_helper.add_line('</b>')
+                            self.markdown_helper.add_line('</summary>')
+
+                        self.markdown_helper.add_line('<table>')
+
+                        table_format = TableFormat()
+                        th_color = table_format.get_th()
+
+                        self.markdown_helper.add_line('<tr>')
+                        self.markdown_helper.add_line(f'<th align= "left", bgcolor="{th_color}">')
+                        self.markdown_helper.add_line('control name')
+                        self.markdown_helper.add_line(f'<th align= "left", bgcolor="{th_color}">')
+                        self.markdown_helper.add_line('control status')
+                        if iteration > 1:
+                            self.markdown_helper.add_line(f'<th align= "left", bgcolor="{th_color}">')
+                            self.markdown_helper.add_line('rule name')
+                            self.markdown_helper.add_line(f'<th align= "left", bgcolor="{th_color}">')
+                            self.markdown_helper.add_line('rule status')
+                        self.markdown_helper.add_line('</tr>')
+
+                        self._display_controls(iteration, inventory_item, control_tuples, table_format)
+
+                        self.markdown_helper.add_line('</table>')
+
+                        if iteration in [1, 2, 3]:
+                            self.markdown_helper.add_line('</details>')
+
+                        self.markdown_helper.add_line('<br/>')
+                        self.markdown_helper.add_line('<br/>')
+
             self.markdown_helper.add_line('<br/>')
-            
+
             self.markdown_helper.add_line('<hr>')
             self.markdown_helper.add_line('<hr>')
-            
+
             self.markdown_helper.add_line('<br/>')
             self.markdown_helper.add_line('<br/>')
-        
+
         self.markdown_helper.write()
-        
-         
+
+
 def main():
     """Run."""
     cp = CompliancePosture()
     cp.process()
+
 
 if __name__ == '__main__':
     main()

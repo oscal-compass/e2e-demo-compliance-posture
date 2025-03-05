@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+"""OSCAL transformation tasks."""
 import json
 import pathlib
 from typing import Dict, List
@@ -19,12 +19,12 @@ from typing import Dict, List
 
 class ObservationsHelper():
     """Observations helper."""
-    
+
     def __init__(self, ipath: pathlib.Path) -> None:
         """Initialize."""
         with open(ipath, 'r') as f:
             self.jdata = json.load(f)
-    
+
     def _get_prop_value(self, props: List[Dict], name: str) -> str:
         """Get result."""
         rval = None
@@ -33,7 +33,7 @@ class ObservationsHelper():
                 rval = prop['value']
                 break
         return rval
-     
+
     def get_inventory(self) -> Dict:
         """Get inventory."""
         inventory = {}
@@ -52,7 +52,7 @@ class ObservationsHelper():
                 name = 'host_name'
                 inventory[uuid_][name] = self._get_prop_value(props, name)
         return inventory
-    
+
     def _get_subject_uuid(self, host: str) -> str:
         """Get subject uuid."""
         uuid_ = None
@@ -63,7 +63,7 @@ class ObservationsHelper():
                 uuid_ = key
                 break
         return uuid_
-            
+
     def get_status(self, host: str, check: str) -> str:
         """Get status."""
         subject_uuid = self._get_subject_uuid(host)
@@ -81,16 +81,8 @@ class ObservationsHelper():
                 if subject['subject-uuid'] != subject_uuid:
                     continue
                 props = observation['props']
-                idref = self._get_prop_value(props,'idref')
-                idref = idref.replace('xccdf_org.ssgproject.content_rule_', '')
+                idref = self._get_prop_value(props, 'idref')
                 if idref == check:
-                    status = idref = self._get_prop_value(props,'result')
+                    status = idref = self._get_prop_value(props, 'result')
                     break
         return status
-        
-        
-        
-        
-
-
- 
