@@ -11,22 +11,22 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+"""OSCAL transformation tasks."""
 import pathlib
 
 
 class MarkdownHelper():
     """Markdown helper."""
-    
+
     def __init__(self, ipath: pathlib.Path) -> None:
         """Initialize."""
         self.ipath = ipath
         self.lines = []
-        
+
     def add_line(self, line) -> None:
         """Add line."""
         self.lines.append(line)
-        
+
     def write(self) -> None:
         """Write."""
         with open(self.ipath, 'w') as file:
