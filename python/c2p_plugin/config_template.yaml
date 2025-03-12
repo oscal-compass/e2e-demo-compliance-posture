@@ -1,0 +1,7 @@
+profile_id: xccdf_org.ssgproject.content_profile_cis_level1_server
+host: localhost
+port: 2222 
+user: root
+path_to_ssh_key: <PATH/TO/SSH_KEY>
+path_to_evidence_dir: ./evidences
+remote_path_to_ssg: /opt/scap-security-guide-0.1.76/ssg-ubuntu2204-ds.xml
