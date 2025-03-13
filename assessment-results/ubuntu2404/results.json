@@ -1,0 +1,2301 @@
+{
+  "results": [
+    {
+      "uuid": "df483fa0-3559-49a1-8ecd-74971d6d5095",
+      "title": "Ubuntu OpenScap Assessment Results",
+      "description": "Ubuntu OpenScap Assessment Results",
+      "start": "2025-03-12T15:40:21+00:00",
+      "local-definitions": {
+        "components": [
+          {
+            "uuid": "a7f9ba63-0675-4df8-a554-dc23d4117c04",
+            "type": "service",
+            "title": "scap_comp_ssg",
+            "description": "",
+            "status": {
+              "state": "operational"
+            }
+          }
+        ],
+        "inventory-items": [
+          {
+            "uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+            "description": "",
+            "props": [
+              {
+                "name": "target",
+                "value": "5d837ff368ed"
+              },
+              {
+                "name": "target_type",
+                "value": "ubuntu2404"
+              },
+              {
+                "name": "host_name",
+                "value": "5d837ff368ed"
+              }
+            ],
+            "implemented-components": [
+              {
+                "component-uuid": "a7f9ba63-0675-4df8-a554-dc23d4117c04"
+              }
+            ]
+          }
+        ],
+        "assessment-assets": {
+          "components": [
+            {
+              "uuid": "3b3a01a4-4962-48b2-8dfb-89a33880c851",
+              "type": "Validator",
+              "title": "OpenSCAP",
+              "description": "",
+              "props": [
+                {
+                  "name": "scanner_name",
+                  "value": "OpenSCAP"
+                },
+                {
+                  "name": "scanner_version",
+                  "value": "1.2.17"
+                },
+                {
+                  "name": "version",
+                  "value": "0.1.76"
+                },
+                {
+                  "name": "weight",
+                  "value": "1.000000"
+                },
+                {
+                  "name": "benchmark_id",
+                  "value": "xccdf_org.ssgproject.content_benchmark_UBUNTU_22-04"
+                },
+                {
+                  "name": "benchmark_href",
+                  "value": "/opt/scap-security-guide-0.1.76/ssg-ubuntu2204-ds.xml"
+                },
+                {
+                  "name": "id",
+                  "value": "xccdf_org.open-scap_testresult_xccdf_org.ssgproject.content_profile_cis_level1_server"
+                }
+              ],
+              "status": {
+                "state": "operational"
+              }
+            }
+          ],
+          "assessment-platforms": [
+            {
+              "uuid": "66540ddf-8cab-46c2-821c-08514bbcfa76"
+            }
+          ]
+        }
+      },
+      "reviewed-controls": {
+        "control-selections": []
+      },
+      "observations": [
+        {
+          "uuid": "dec21877-14f6-46ca-a147-78adc3eae695",
+          "title": "xccdf_org.ssgproject.content_rule_package_sudo_installed",
+          "description": "xccdf_org.ssgproject.content_rule_package_sudo_installed",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "package_sudo_installed"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_package_sudo_installed"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_package_sudo_installed"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "46b16ec5-2666-4772-81bb-cfa17e6e01e1",
+          "title": "xccdf_org.ssgproject.content_rule_sudo_add_use_pty",
+          "description": "xccdf_org.ssgproject.content_rule_sudo_add_use_pty",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "sudo_add_use_pty"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_sudo_add_use_pty"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_sudo_add_use_pty"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "f3205e77-d8ac-4f0f-82d8-c0187c223925",
+          "title": "xccdf_org.ssgproject.content_rule_sudo_custom_logfile",
+          "description": "xccdf_org.ssgproject.content_rule_sudo_custom_logfile",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "sudo_custom_logfile"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_sudo_custom_logfile"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_sudo_custom_logfile"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "327b7215-ec06-40e3-8fc2-bb35dfa5cad2",
+          "title": "xccdf_org.ssgproject.content_rule_sudo_remove_no_authenticate",
+          "description": "xccdf_org.ssgproject.content_rule_sudo_remove_no_authenticate",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "sudo_remove_no_authenticate"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_sudo_remove_no_authenticate"
+            },
+            {
+              "name": "result",
+              "value": "pass"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_sudo_remove_no_authenticate"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "ff8c3d2d-f226-4935-8f7c-693d51457564",
+          "title": "xccdf_org.ssgproject.content_rule_sudo_require_authentication",
+          "description": "xccdf_org.ssgproject.content_rule_sudo_require_authentication",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "sudo_require_authentication"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_sudo_require_authentication"
+            },
+            {
+              "name": "result",
+              "value": "notselected"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_sudo_require_authentication"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "133b54cc-78e3-436f-a7b9-322ec11b8667",
+          "title": "xccdf_org.ssgproject.content_rule_sudo_require_reauthentication",
+          "description": "xccdf_org.ssgproject.content_rule_sudo_require_reauthentication",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "sudo_require_reauthentication"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_sudo_require_reauthentication"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_sudo_require_reauthentication"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "9a6997f4-96c4-4a2b-b21b-ce6b13dadfae",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_passwords_pam_faillock_deny"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "8f588a1c-5a19-4f19-b20e-b270328b5c51",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_unlock_time",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_unlock_time",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_passwords_pam_faillock_unlock_time"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_unlock_time"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_unlock_time"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "239388ae-c0ae-491f-8376-0190a4a67996",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_password_pam_dcredit"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "de12dbb3-c2f9-4478-83a5-21d780da7e3f",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_password_pam_dictcheck",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_password_pam_dictcheck",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_password_pam_dictcheck"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_dictcheck"
+            },
+            {
+              "name": "result",
+              "value": "notselected"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_dictcheck"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "58754437-b789-4034-b86b-637cc0baa098",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_password_pam_difok",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_password_pam_difok",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_password_pam_difok"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_difok"
+            },
+            {
+              "name": "result",
+              "value": "notselected"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_difok"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "1a485bbe-2461-4e6a-9c6e-ed015620d175",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_password_pam_enforcing",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_password_pam_enforcing",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_password_pam_enforcing"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_enforcing"
+            },
+            {
+              "name": "result",
+              "value": "notselected"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_enforcing"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "a04001a2-a8c1-4ac4-8c3b-2cb6929e7f65",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_password_pam_lcredit"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "85b44954-7d21-4ba5-875c-7bdc7ddc9edf",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_password_pam_minclass",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_password_pam_minclass",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_password_pam_minclass"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_minclass"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_minclass"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "32dd15b0-5dde-4668-9539-4cbf738ad296",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_password_pam_minlen"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "2a55410e-baae-462b-9ea1-5a73fc55f578",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_password_pam_ocredit"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "7c19e96d-3a78-450d-8395-307d76cc4520",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_password_pam_ucredit"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "81234d55-046a-4850-b58d-77c48b14b9c3",
+          "title": "xccdf_org.ssgproject.content_rule_set_password_hashing_algorithm_logindefs",
+          "description": "xccdf_org.ssgproject.content_rule_set_password_hashing_algorithm_logindefs",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "set_password_hashing_algorithm_logindefs"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_set_password_hashing_algorithm_logindefs"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_set_password_hashing_algorithm_logindefs"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "5f436de0-92b0-48b0-8046-21287979889f",
+          "title": "xccdf_org.ssgproject.content_rule_set_password_hashing_algorithm_systemauth",
+          "description": "xccdf_org.ssgproject.content_rule_set_password_hashing_algorithm_systemauth",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "set_password_hashing_algorithm_systemauth"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_set_password_hashing_algorithm_systemauth"
+            },
+            {
+              "name": "result",
+              "value": "notselected"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_set_password_hashing_algorithm_systemauth"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "eda8786a-5c7e-42dc-836c-b47427bbe0bf",
+          "title": "xccdf_org.ssgproject.content_rule_account_disable_post_pw_expiration",
+          "description": "xccdf_org.ssgproject.content_rule_account_disable_post_pw_expiration",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "account_disable_post_pw_expiration"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_account_disable_post_pw_expiration"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_account_disable_post_pw_expiration"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "c1e54860-1948-48c4-a5fe-3f4ce8a78adc",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_maximum_age_login_defs",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_maximum_age_login_defs",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_maximum_age_login_defs"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_maximum_age_login_defs"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_maximum_age_login_defs"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "b338fada-e55d-41b8-a13c-1459db50b084",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_minimum_age_login_defs",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_minimum_age_login_defs",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_minimum_age_login_defs"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_minimum_age_login_defs"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_minimum_age_login_defs"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "7e010700-8470-4b73-9595-efb96da509fe",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_password_set_max_life_existing",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_password_set_max_life_existing",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_password_set_max_life_existing"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_password_set_max_life_existing"
+            },
+            {
+              "name": "result",
+              "value": "pass"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_password_set_max_life_existing"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "887e7a0e-192c-407b-8c14-bb1d091ba753",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_password_set_min_life_existing",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_password_set_min_life_existing",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_password_set_min_life_existing"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_password_set_min_life_existing"
+            },
+            {
+              "name": "result",
+              "value": "pass"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_password_set_min_life_existing"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "7ad2b949-9e7d-4bb4-b195-6bc9f1ecb299",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_password_warn_age_login_defs",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_password_warn_age_login_defs",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_password_warn_age_login_defs"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_password_warn_age_login_defs"
+            },
+            {
+              "name": "result",
+              "value": "pass"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_password_warn_age_login_defs"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "33607a3f-8aad-4564-8df0-296b0e69d225",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_password_last_change_is_in_past",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_password_last_change_is_in_past",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_password_last_change_is_in_past"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_password_last_change_is_in_past"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_password_last_change_is_in_past"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "5079cbe9-f8e7-44a2-b52b-00d0c7408bc8",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_root_gid_zero",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_root_gid_zero",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_root_gid_zero"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_root_gid_zero"
+            },
+            {
+              "name": "result",
+              "value": "pass"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_root_gid_zero"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "49d1c85c-596f-4769-8aef-ab07855e5b2a",
+          "title": "xccdf_org.ssgproject.content_rule_ensure_pam_wheel_group_empty",
+          "description": "xccdf_org.ssgproject.content_rule_ensure_pam_wheel_group_empty",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "ensure_pam_wheel_group_empty"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_ensure_pam_wheel_group_empty"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_ensure_pam_wheel_group_empty"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "f2cf5ea5-2c6f-4a9d-be7d-21d727790d71",
+          "title": "xccdf_org.ssgproject.content_rule_no_shelllogin_for_systemaccounts",
+          "description": "xccdf_org.ssgproject.content_rule_no_shelllogin_for_systemaccounts",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "no_shelllogin_for_systemaccounts"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_no_shelllogin_for_systemaccounts"
+            },
+            {
+              "name": "result",
+              "value": "pass"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_no_shelllogin_for_systemaccounts"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "d876825c-bec7-477c-b23c-7c21fdddcc3c",
+          "title": "xccdf_org.ssgproject.content_rule_use_pam_wheel_group_for_su",
+          "description": "xccdf_org.ssgproject.content_rule_use_pam_wheel_group_for_su",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "use_pam_wheel_group_for_su"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_use_pam_wheel_group_for_su"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_use_pam_wheel_group_for_su"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "8f615cc4-5b99-4970-9797-40b39e7b5245",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_tmout",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_tmout",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_tmout"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_tmout"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_tmout"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "fdc13f6f-d590-402f-a807-8bcc06cf250c",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_umask_etc_bashrc"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "6a999734-68a3-4218-a020-7a3b4c8d9d67",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_umask_etc_login_defs"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "75789161-5308-40d2-ab8c-4b996706bfea",
+          "title": "xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile",
+          "description": "xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "accounts_umask_etc_profile"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile"
+            },
+            {
+              "name": "result",
+              "value": "fail"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "79afc1dd-67e9-4610-a6af-ca811a867bb8",
+          "title": "xccdf_org.ssgproject.content_rule_file_groupowner_sshd_config",
+          "description": "xccdf_org.ssgproject.content_rule_file_groupowner_sshd_config",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "file_groupowner_sshd_config"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_file_groupowner_sshd_config"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_file_groupowner_sshd_config"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "9c7f1b4c-6ca0-4448-8043-a900c4f06d30",
+          "title": "xccdf_org.ssgproject.content_rule_file_owner_sshd_config",
+          "description": "xccdf_org.ssgproject.content_rule_file_owner_sshd_config",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "file_owner_sshd_config"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_file_owner_sshd_config"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_file_owner_sshd_config"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "192ae6bd-ed26-4efb-b078-982acfb4abc8",
+          "title": "xccdf_org.ssgproject.content_rule_file_permissions_sshd_config",
+          "description": "xccdf_org.ssgproject.content_rule_file_permissions_sshd_config",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "file_permissions_sshd_config"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_file_permissions_sshd_config"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_file_permissions_sshd_config"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "4afeb9d0-0731-4dbf-966a-8666c7a4a0da",
+          "title": "xccdf_org.ssgproject.content_rule_file_permissions_sshd_private_key",
+          "description": "xccdf_org.ssgproject.content_rule_file_permissions_sshd_private_key",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "file_permissions_sshd_private_key"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_file_permissions_sshd_private_key"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_file_permissions_sshd_private_key"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "353f7eef-b246-4b03-8d41-9991837d32e2",
+          "title": "xccdf_org.ssgproject.content_rule_file_permissions_sshd_pub_key",
+          "description": "xccdf_org.ssgproject.content_rule_file_permissions_sshd_pub_key",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "file_permissions_sshd_pub_key"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_file_permissions_sshd_pub_key"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_file_permissions_sshd_pub_key"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "16489bdf-6502-4a11-b06f-e4243457b30e",
+          "title": "xccdf_org.ssgproject.content_rule_sshd_disable_empty_passwords",
+          "description": "xccdf_org.ssgproject.content_rule_sshd_disable_empty_passwords",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "sshd_disable_empty_passwords"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_sshd_disable_empty_passwords"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_sshd_disable_empty_passwords"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "7f692c4a-bff1-4272-b78b-9750fead14d8",
+          "title": "xccdf_org.ssgproject.content_rule_sshd_disable_gssapi_auth",
+          "description": "xccdf_org.ssgproject.content_rule_sshd_disable_gssapi_auth",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "sshd_disable_gssapi_auth"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_sshd_disable_gssapi_auth"
+            },
+            {
+              "name": "result",
+              "value": "notselected"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_sshd_disable_gssapi_auth"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "64d9426e-4422-4756-9fe0-5398ac5cf76b",
+          "title": "xccdf_org.ssgproject.content_rule_sshd_disable_rhosts",
+          "description": "xccdf_org.ssgproject.content_rule_sshd_disable_rhosts",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "sshd_disable_rhosts"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_sshd_disable_rhosts"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_sshd_disable_rhosts"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "981c11ae-e93e-4ba9-82dd-d175164d4004",
+          "title": "xccdf_org.ssgproject.content_rule_sshd_disable_root_login",
+          "description": "xccdf_org.ssgproject.content_rule_sshd_disable_root_login",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "sshd_disable_root_login"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_sshd_disable_root_login"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_sshd_disable_root_login"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "3d3203f7-a45e-4622-923b-a5e4ff334a78",
+          "title": "xccdf_org.ssgproject.content_rule_sshd_enable_pam",
+          "description": "xccdf_org.ssgproject.content_rule_sshd_enable_pam",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "sshd_enable_pam"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_sshd_enable_pam"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_sshd_enable_pam"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "1e4f2f7d-b996-41a0-8d95-47808ec64bf2",
+          "title": "xccdf_org.ssgproject.content_rule_sshd_limit_user_access",
+          "description": "xccdf_org.ssgproject.content_rule_sshd_limit_user_access",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "sshd_limit_user_access"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_sshd_limit_user_access"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_sshd_limit_user_access"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "41db9bcc-0510-4301-9001-d0babf3a4587",
+          "title": "xccdf_org.ssgproject.content_rule_sshd_set_loglevel_info",
+          "description": "xccdf_org.ssgproject.content_rule_sshd_set_loglevel_info",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "sshd_set_loglevel_info"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_sshd_set_loglevel_info"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_sshd_set_loglevel_info"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "01046650-d6bd-4ace-9a52-f2ad821869ac",
+          "title": "xccdf_org.ssgproject.content_rule_sshd_set_max_auth_tries",
+          "description": "xccdf_org.ssgproject.content_rule_sshd_set_max_auth_tries",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "sshd_set_max_auth_tries"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_sshd_set_max_auth_tries"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_sshd_set_max_auth_tries"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "f834d32b-8f9e-4285-94d4-b73b88f0ae1f",
+          "title": "xccdf_org.ssgproject.content_rule_sshd_use_strong_ciphers",
+          "description": "xccdf_org.ssgproject.content_rule_sshd_use_strong_ciphers",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "sshd_use_strong_ciphers"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_sshd_use_strong_ciphers"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_sshd_use_strong_ciphers"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "0c46bc76-489a-4fe2-a1b9-eab553ab3419",
+          "title": "xccdf_org.ssgproject.content_rule_sshd_use_strong_kex",
+          "description": "xccdf_org.ssgproject.content_rule_sshd_use_strong_kex",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "sshd_use_strong_kex"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_sshd_use_strong_kex"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_sshd_use_strong_kex"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        },
+        {
+          "uuid": "5fb74877-be16-4a24-9d71-bd8ec54200f8",
+          "title": "xccdf_org.ssgproject.content_rule_sshd_use_strong_macs",
+          "description": "xccdf_org.ssgproject.content_rule_sshd_use_strong_macs",
+          "props": [
+            {
+              "name": "assessment-rule-id",
+              "value": "sshd_use_strong_macs"
+            },
+            {
+              "name": "idref",
+              "value": "xccdf_org.ssgproject.content_rule_sshd_use_strong_macs"
+            },
+            {
+              "name": "result",
+              "value": "notapplicable"
+            }
+          ],
+          "methods": [
+            "TEST-AUTOMATED"
+          ],
+          "subjects": [
+            {
+              "subject-uuid": "1bc000b2-6706-4784-8a3c-298383b1bc7b",
+              "type": "inventory-item",
+              "title": "5d837ff368ed",
+              "props": [
+                {
+                  "name": "resource-id",
+                  "value": "xccdf_org.ssgproject.content_rule_sshd_use_strong_macs"
+                },
+                {
+                  "name": "result",
+                  "value": "error"
+                },
+                {
+                  "name": "evaluated-on",
+                  "value": "2025-03-12T15:40:21+00:00"
+                }
+              ]
+            }
+          ],
+          "collected": "2025-03-12T15:40:21+00:00"
+        }
+      ]
+    }
+  ]
+}
