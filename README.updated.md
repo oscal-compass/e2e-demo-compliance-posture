@@ -5,7 +5,7 @@ This repo comprises Compliance Posture for the end-to-end demo.
 
 The [demo overview](https://github.com/oscal-compass/e2e-demo).
 
-Last updated: *2025-03-13 00:40:28*
+Last updated: *2025-03-13 23:19:19*
 
 <hr>
 <hr>
@@ -13,7 +13,7 @@ Last updated: *2025-03-13 00:40:28*
 Component definition for Ubuntu_Linux_24.04_LTS V1.0
 </h2>
 <h2>
-type: ubuntu2404
+type: ssg-ubuntu2204-ds
 </h2>
 <h3>
 host: 5d837ff368ed

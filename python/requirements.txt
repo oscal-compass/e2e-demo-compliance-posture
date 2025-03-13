@@ -1,1 +1,2 @@
 compliance-to-policy==0.5.0
+paramiko==3.5.0
