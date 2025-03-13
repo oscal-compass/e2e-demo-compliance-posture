@@ -11,7 +11,7 @@ YELLOW := \033[0;33m
 BLUE := \033[1;34m
 NC := \033[0m # No Color
 
-all: vagrant c2p compliance-posture
+all: vagrant-start c2p compliance-posture vagrant-stop
 
 compliance-posture:
 	@printf "$(BLUE)=> use OSCAL Compass trestle to calucalte NIST 800-53 compliance posture for VM$(NC)\n"
@@ -37,20 +37,24 @@ c2p-config:
 	vagrant ssh-config > /tmp/vagrant.ssh.config
 	python python/compliance_to_policy_config.py --input /tmp/vagrant.ssh.config --output python/c2p_plugin/config.yaml
 	
-vagrant: vagrant-halt vagrant-up
+vagrant-start: vagrant-init vagrant-up
+vagrant-stop: vagrant-halt
 
-.SILENT: vagrant-halt
-vagrant-halt:
-	@printf "$(BLUE)=> stop VM (if running)$(NC)\n"
-	vagrant halt
+.SILENT: vagrant-init
+vagrant-init:
+	@printf "$(BLUE)=> get VM image$(NC)\n"
+	cp -p resources/vagrant/ubuntu-24.04/Vagrantfile .
 
 .SILENT: vagrant-up
 vagrant-up:
-	@printf "$(BLUE)=> get VM image$(NC)\n"
-	rm -fr .vagrant
-	cp -p resources/vagrant/ubuntu-24.04/Vagrantfile .
 	@printf "$(BLUE)=> start VM$(NC)\n"
 	vagrant up
+
+.SILENT: vagrant-halt
+vagrant-halt:
+	@printf "$(BLUE)=> stop VM$(NC)\n"
+	vagrant halt
+	rm -fr .vagrant
 	
 # -----
 

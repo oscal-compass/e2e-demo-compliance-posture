@@ -133,3 +133,4 @@ dmypy.json
 /.pydevproject
 /.vagrant/
 /evidences/
+/Vagrantfile
