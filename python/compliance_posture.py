@@ -198,7 +198,7 @@ class CompliancePosture():
         self.markdown_helper.add_line('')
         self.markdown_helper.add_line('The [demo overview](https://github.com/oscal-compass/e2e-demo).')
         self.markdown_helper.add_line('')
-        
+
         now = datetime.now()
         datetime_without_ms = now.strftime('%Y-%m-%d %H:%M:%S')
         self.markdown_helper.add_line(f'Last updated: *{datetime_without_ms}*')

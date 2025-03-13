@@ -5,7 +5,7 @@ This repo comprises Compliance Posture for the end-to-end demo.
 
 The [demo overview](https://github.com/oscal-compass/e2e-demo).
 
-Last updated: *2025-03-05 12:19:21*
+Last updated: *2025-03-13 15:16:31*
 
 <hr>
 <hr>
@@ -13,10 +13,10 @@ Last updated: *2025-03-05 12:19:21*
 Component definition for Ubuntu_Linux_24.04_LTS V1.0
 </h2>
 <h2>
-type: ubuntu2404
+type: #scap_org.open-scap_comp_ssg-ubuntu2404-xccdf
 </h2>
 <h3>
-host: Dade
+host: vagrant
 </h3>
 <details open>
 <summary>
@@ -77,14 +77,14 @@ fail
 <td align= "left", bgcolor="ghostwhite">
 ac-6.2
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_red_dot.png" width="12" height="12"> 
-fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <tr>
 <td align= "left", bgcolor="linen">
 ac-6.5
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_red_dot.png" width="12" height="12"> 
-fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 ac-11
@@ -107,38 +107,38 @@ fail
 <td align= "left", bgcolor="linen">
 ac-17.2
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> 
-pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> 
+fail
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 au-2
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> 
-pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <tr>
 <td align= "left", bgcolor="linen">
 au-3
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_red_dot.png" width="12" height="12"> 
-fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 au-3.1
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_red_dot.png" width="12" height="12"> 
-fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <tr>
 <td align= "left", bgcolor="linen">
 au-7
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_red_dot.png" width="12" height="12"> 
-fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 au-12
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_red_dot.png" width="12" height="12"> 
-fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <tr>
 <td align= "left", bgcolor="linen">
 cm-1
@@ -155,14 +155,14 @@ pass
 <td align= "left", bgcolor="linen">
 cm-6
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> 
-pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 cm-7
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> 
-pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <tr>
 <td align= "left", bgcolor="linen">
 cm-7.1
@@ -179,8 +179,8 @@ pass
 <td align= "left", bgcolor="linen">
 ia-5
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> 
-pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> 
+fail
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 ia-5.1
@@ -215,14 +215,14 @@ pass
 <td align= "left", bgcolor="linen">
 sc-8
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> 
-pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> 
+fail
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 sc-8.1
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> 
-pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> 
+fail
 <tr>
 <td align= "left", bgcolor="linen">
 sc-28
@@ -442,7 +442,7 @@ ensure_pam_wheel_group_empty
 <td align= "left", bgcolor="ghostwhite">
 ensure_root_access_controlled
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
@@ -463,7 +463,7 @@ file_owner_sshd_config
 <td align= "left", bgcolor="linen">
 file_permissions_sshd_config
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
@@ -505,7 +505,7 @@ no_shelllogin_for_systemaccounts
 <td align= "left", bgcolor="linen">
 sshd_limit_user_access
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_red_dot.png" width="12" height="12"> fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
@@ -576,7 +576,7 @@ ensure_pam_wheel_group_empty
 <td align= "left", bgcolor="linen">
 ensure_root_access_controlled
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
@@ -597,7 +597,7 @@ file_owner_sshd_config
 <td align= "left", bgcolor="ghostwhite">
 file_permissions_sshd_config
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
@@ -639,7 +639,7 @@ no_shelllogin_for_systemaccounts
 <td align= "left", bgcolor="ghostwhite">
 sshd_limit_user_access
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_red_dot.png" width="12" height="12"> fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
@@ -710,7 +710,7 @@ ensure_pam_wheel_group_empty
 <td align= "left", bgcolor="ghostwhite">
 ensure_root_access_controlled
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
@@ -731,7 +731,7 @@ file_owner_sshd_config
 <td align= "left", bgcolor="linen">
 file_permissions_sshd_config
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
@@ -773,7 +773,7 @@ no_shelllogin_for_systemaccounts
 <td align= "left", bgcolor="linen">
 sshd_limit_user_access
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_red_dot.png" width="12" height="12"> fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
@@ -785,8 +785,8 @@ use_pam_wheel_group_for_su
 <td align= "left", bgcolor="linen">
 ac-6.2
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_red_dot.png" width="12" height="12"> 
-fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <tr>
@@ -802,41 +802,41 @@ package_sudo_installed
 <td align= "left", bgcolor="linen">
 sshd_disable_root_login
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 sudo_add_use_pty
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 sudo_remove_no_authenticate
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 sudo_require_authentication
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 sudo_require_reauthentication
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_red_dot.png" width="12" height="12"> fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 ac-6.5
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_red_dot.png" width="12" height="12"> 
-fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <tr>
@@ -852,35 +852,35 @@ package_sudo_installed
 <td align= "left", bgcolor="ghostwhite">
 sshd_disable_root_login
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 sudo_add_use_pty
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 sudo_remove_no_authenticate
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 sudo_require_authentication
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 sudo_require_reauthentication
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_red_dot.png" width="12" height="12"> fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 ac-11
@@ -930,8 +930,8 @@ accounts_tmout
 <td align= "left", bgcolor="linen">
 ac-17.2
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> 
-pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> 
+fail
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <tr>
@@ -940,27 +940,27 @@ pass
 <td align= "left", bgcolor="ghostwhite">
 sshd_use_strong_ciphers
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 sshd_use_strong_kex
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 sshd_use_strong_macs
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="linen">
 au-2
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> 
-pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <tr>
@@ -969,13 +969,13 @@ pass
 <td align= "left", bgcolor="ghostwhite">
 sshd_set_loglevel_info
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 au-3
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_red_dot.png" width="12" height="12"> 
-fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <tr>
@@ -984,20 +984,20 @@ fail
 <td align= "left", bgcolor="ghostwhite">
 sshd_set_max_auth_tries
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 sudo_custom_logfile
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_red_dot.png" width="12" height="12"> fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 au-3.1
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_red_dot.png" width="12" height="12"> 
-fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <tr>
@@ -1006,20 +1006,20 @@ fail
 <td align= "left", bgcolor="linen">
 sshd_set_max_auth_tries
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 sudo_custom_logfile
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_red_dot.png" width="12" height="12"> fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 au-7
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_red_dot.png" width="12" height="12"> 
-fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <tr>
@@ -1028,27 +1028,27 @@ fail
 <td align= "left", bgcolor="ghostwhite">
 sshd_set_loglevel_info
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 sshd_set_max_auth_tries
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 sudo_custom_logfile
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_red_dot.png" width="12" height="12"> fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 au-12
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_red_dot.png" width="12" height="12"> 
-fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <tr>
@@ -1057,21 +1057,21 @@ fail
 <td align= "left", bgcolor="ghostwhite">
 sshd_set_loglevel_info
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 sshd_set_max_auth_tries
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 sudo_custom_logfile
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_red_dot.png" width="12" height="12"> fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 cm-1
@@ -1106,8 +1106,8 @@ accounts_password_warn_age_login_defs
 <td align= "left", bgcolor="linen">
 cm-6
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> 
-pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <tr>
@@ -1123,13 +1123,13 @@ accounts_password_warn_age_login_defs
 <td align= "left", bgcolor="linen">
 sshd_disable_forwarding
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 cm-7
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> 
-pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> 
+error
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <tr>
@@ -1145,7 +1145,7 @@ accounts_password_warn_age_login_defs
 <td align= "left", bgcolor="ghostwhite">
 sshd_disable_forwarding
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 cm-7.1
@@ -1180,8 +1180,8 @@ accounts_password_warn_age_login_defs
 <td align= "left", bgcolor="linen">
 ia-5
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> 
-pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> 
+fail
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <tr>
@@ -1190,21 +1190,21 @@ pass
 <td align= "left", bgcolor="ghostwhite">
 sshd_use_strong_ciphers
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 sshd_use_strong_kex
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 sshd_use_strong_macs
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="linen">
 ia-5.1
@@ -1352,7 +1352,7 @@ accounts_password_pam_pwhistory_use_authtok
 <td align= "left", bgcolor="linen">
 accounts_password_pam_pwquality_enabled
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
@@ -1380,14 +1380,14 @@ accounts_password_pam_unix_no_remember
 <td align= "left", bgcolor="linen">
 accounts_password_set_max_life_existing
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_red_dot.png" width="12" height="12"> fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 accounts_password_set_min_life_existing
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_red_dot.png" width="12" height="12"> fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
@@ -1415,49 +1415,49 @@ set_password_hashing_algorithm_systemauth
 <td align= "left", bgcolor="ghostwhite">
 sshd_disable_empty_passwords
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 sshd_disable_gssapi_auth
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 sshd_disable_rhosts
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 sshd_enable_pam
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 sshd_use_strong_ciphers
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 sshd_use_strong_kex
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 sshd_use_strong_macs
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="linen">
 mp-2
@@ -1521,7 +1521,7 @@ ensure_pam_wheel_group_empty
 <td align= "left", bgcolor="linen">
 ensure_root_access_controlled
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
@@ -1542,7 +1542,7 @@ file_owner_sshd_config
 <td align= "left", bgcolor="ghostwhite">
 file_permissions_sshd_config
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
@@ -1584,7 +1584,7 @@ no_shelllogin_for_systemaccounts
 <td align= "left", bgcolor="ghostwhite">
 sshd_limit_user_access
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_red_dot.png" width="12" height="12"> fail
+<img src="images/Basic_gold_dot.png" width="12" height="12"> error
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
@@ -1641,8 +1641,8 @@ accounts_password_warn_age_login_defs
 <td align= "left", bgcolor="ghostwhite">
 sc-8
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> 
-pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> 
+fail
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <tr>
@@ -1651,27 +1651,27 @@ pass
 <td align= "left", bgcolor="linen">
 sshd_use_strong_ciphers
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 sshd_use_strong_kex
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 sshd_use_strong_macs
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 sc-8.1
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> 
-pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> 
+fail
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <tr>
@@ -1680,21 +1680,21 @@ pass
 <td align= "left", bgcolor="linen">
 sshd_use_strong_ciphers
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 <td align= "left", bgcolor="ghostwhite">
 sshd_use_strong_kex
 <td align= "left", bgcolor="ghostwhite">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 <td align= "left", bgcolor="linen">
 sshd_use_strong_macs
 <td align= "left", bgcolor="linen">
-<img src="images/Basic_green_dot.png" width="12" height="12"> pass
+<img src="images/Basic_red_dot.png" width="12" height="12"> fail
 <tr>
 <td align= "left", bgcolor="ghostwhite">
 sc-28
