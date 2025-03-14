@@ -14,4 +14,4 @@
 """Markdown display."""
 import webbrowser
 
-webbrowser.open('README.md')
+webbrowser.open('README.md', new=0)
