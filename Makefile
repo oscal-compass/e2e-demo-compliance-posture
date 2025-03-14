@@ -78,9 +78,7 @@ clean-venv:
 .SILENT: venv
 venv:
 	if [ ! -d $(SOURCE_INIT) ]; then \
-		@printf "$(BLUE)=> create python virtual environment$(NC)\n"; \
 		python -m venv $(SOURCE_INIT); \
 		source $(SOURCE); \
-		@printf "$(BLUE)=> install prereqs$(NC)\n"; \
-		pip install -r python/requirements.txt;
+		pip install -r python/requirements.txt; \
 	fi
