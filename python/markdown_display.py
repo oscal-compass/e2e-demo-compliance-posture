@@ -12,6 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 """Markdown display."""
+import subprocess
 import webbrowser
+from sys import platform
 
-webbrowser.open('README.md', new=0)
+import markdown
+
+md_file = 'README.md'
+
+if platform == 'darwin':
+    html_file = md_file.replace('.md', '.html')
+    with open(md_file, 'r', encoding='utf-8') as f:
+        md_content = f.read()
+    html_content = markdown.markdown(md_content)
+    with open(html_file, 'w', encoding='utf-8') as f:
+        f.write(html_content)
+    subprocess.run(['open', html_file])
+else:
+    webbrowser.open('README.md', new=0)

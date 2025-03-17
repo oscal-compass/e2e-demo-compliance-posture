@@ -17,14 +17,15 @@ all:
 	@printf "$(BLUE)=> use command 'make demo' or 'make clean-up'$(NC)\n"
 	
 demo: init compliance-posture display-posture
-clean-up: vagrant-stop
+clean-up: vagrant-stop clean-venv
 
-init: vagrant-start c2p 
+init: venv vagrant-start c2p 
 
 # -----
 
 compliance-posture:
 	@printf "$(BLUE)=> use OSCAL Compass trestle to calucalte NIST 800-53 compliance posture for VM$(NC)\n"
+	source $(SOURCE); \
 	python python/compliance_posture.py --markdown README.md --observations assessment-results/ubuntu2404/results.json --software component-definitions/Ubuntu_Linux_24.04_LTS/component-definition.json --validation component-definitions/oscap/component-definition.json
 
 display-posture:
@@ -36,7 +37,7 @@ display-posture:
 c2p: c2p-config c2p-cmd
 
 .SILENT: c2p-cmd
-c2p-cmd: venv
+c2p-cmd:
 	@printf "$(BLUE)=> use OSCAL Compass C2P to deploy tailored profile to VM and get oscap results from VM$(NC)\n"
 	source $(SOURCE); \
 	python python/compliance_to_policy.py --config python/c2p_plugin/config.yaml --component_definition component-definitions/oscap/component-definition.json --out assessment-results/ubuntu2404/results.json
@@ -73,10 +74,12 @@ vagrant-halt:
 
 .SILENT: clean-venv
 clean-venv:
-	rm -fr $(SOURCE)
+	@printf "$(BLUE)=> remove venv\n"
+	rm -fr $(SOURCE_INIT)
 
 .SILENT: venv
 venv:
+	@printf "$(BLUE)=> create venv\n"
 	if [ ! -d $(SOURCE_INIT) ]; then \
 		python -m venv $(SOURCE_INIT); \
 		source $(SOURCE); \
