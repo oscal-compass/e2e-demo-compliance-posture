@@ -74,12 +74,12 @@ vagrant-halt:
 
 .SILENT: clean-venv
 clean-venv:
-	@printf "$(BLUE)=> remove venv\n"
+	@printf "$(BLUE)=> clean-up venv$(NC)\n"
 	rm -fr $(SOURCE_INIT)
 
 .SILENT: venv
 venv:
-	@printf "$(BLUE)=> create venv\n"
+	@printf "$(BLUE)=> create venv$(NC)\n"
 	if [ ! -d $(SOURCE_INIT) ]; then \
 		python -m venv $(SOURCE_INIT); \
 		source $(SOURCE); \
