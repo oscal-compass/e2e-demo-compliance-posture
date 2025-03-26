@@ -214,10 +214,14 @@ class CompliancePosture():
             if tgt_type not in type_list:
                 type_list.append(tgt_type)
 
-        title = self.software_helper.get_title()
+        source = self.software_helper.get_controls_source().split('/')[1]
+        title = self.software_helper.get_title().replace('for ', 'for: ')
         version = self.software_helper.get_version()
 
         for tgt_type in type_list:
+            self.markdown_helper.add_line('<h2>')
+            self.markdown_helper.add_line(f'Controls for: {source}')
+            self.markdown_helper.add_line('</h2>')
             self.markdown_helper.add_line('<h2>')
             self.markdown_helper.add_line(f'{title} {version}')
             self.markdown_helper.add_line('</h2>')

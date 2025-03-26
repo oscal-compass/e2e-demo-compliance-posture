@@ -33,6 +33,12 @@ class ComponentDefinitionHelper():
         """Get version."""
         return self.cd.metadata.version
 
+    def get_controls_source(self) -> List[str]:
+        """Get controls source."""
+        component = self.cd.components[0]
+        control_implementation = component.control_implementations[0]
+        return control_implementation.source
+        
     def get_controls(self) -> List[str]:
         """Get controls."""
         rval = []
