@@ -1,16 +1,20 @@
 # End-to-End Demo: Compliance Posture
-End-to-End Demo: Policy as Code Ubuntu results
 
 This repo comprises Compliance Posture for the end-to-end demo.
 
-The [demo overview](https://github.com/oscal-compass/e2e-demo).
+The end-to-end demo [overview](https://github.com/oscal-compass/e2e-demo).
+<br/>
+The end-to-end-demo [compliance posture portion](https://github.com/oscal-compass/e2e-demo#demo-2---cncf-oscal-compass-automated-compliance-posture) instructions.
 
-Last updated: *2025-03-18 10:06:07*
+Last updated: *2025-03-27 12:56:11*
 
 <hr>
 <hr>
 <h2>
-Component definition for Ubuntu_Linux_24.04_LTS V1.0
+Controls for: NIST_800-53_rev5_selected
+</h2>
+<h2>
+Component definition for: Ubuntu_Linux_24.04_LTS V1.0
 </h2>
 <h2>
 type: #scap_org.open-scap_comp_ssg-ubuntu2404-xccdf

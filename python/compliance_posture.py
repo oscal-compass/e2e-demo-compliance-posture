@@ -192,11 +192,12 @@ class CompliancePosture():
                     control_tuples.append(control_tuple)
 
         self.markdown_helper.add_line('# End-to-End Demo: Compliance Posture')
-        self.markdown_helper.add_line('End-to-End Demo: Policy as Code Ubuntu results')
         self.markdown_helper.add_line('')
         self.markdown_helper.add_line('This repo comprises Compliance Posture for the end-to-end demo.')
         self.markdown_helper.add_line('')
-        self.markdown_helper.add_line('The [demo overview](https://github.com/oscal-compass/e2e-demo).')
+        self.markdown_helper.add_line('The end-to-end demo [overview](https://github.com/oscal-compass/e2e-demo).')
+        self.markdown_helper.add_line('<br/>')
+        self.markdown_helper.add_line('The end-to-end-demo [compliance posture portion](https://github.com/oscal-compass/e2e-demo#demo-2---cncf-oscal-compass-automated-compliance-posture) instructions.')
         self.markdown_helper.add_line('')
 
         now = datetime.now()
