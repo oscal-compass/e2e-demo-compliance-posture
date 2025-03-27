@@ -14,17 +14,27 @@ NC := \033[0m # No Color
 # -----
 
 all:
-	@printf "$(BLUE)=> use command 'make demo' or 'make clean-up'$(NC)\n"
+	@printf "$(BLUE)=> use command 'make demo' to run demo$(NC)\n"
+	@printf "$(BLUE)=> use command 'make demo-with-pauses' to run demo with pauses at strategic points$(NC)\n"
+	@printf "$(BLUE)=> use command 'make clean-up' to clean-up$(NC)\n"
 	
 demo: init compliance-posture display-posture
-clean-up: vagrant-stop clean-venv
+demo-with-pauses: pause-enable demo pause-disable
+clean-up: vagrant-stop clean-venv pause-disable
 
 init: venv vagrant-start c2p 
 
+pause-enable:
+	python python/pause.py --enable
+	
+pause-disable:
+	python python/pause.py --disable
+	
 # -----
 
 compliance-posture:
 	@printf "$(BLUE)=> use OSCAL Compass trestle to calucalte NIST 800-53 compliance posture for VM$(NC)\n"
+	python python/pause.py
 	source $(SOURCE); \
 	python python/compliance_posture.py --markdown README.md --observations assessment-results/ubuntu2404/results.json --software component-definitions/Ubuntu_Linux_24.04_LTS/component-definition.json --validation component-definitions/oscap/component-definition.json
 
@@ -39,6 +49,7 @@ c2p: c2p-config c2p-cmd
 .SILENT: c2p-cmd
 c2p-cmd:
 	@printf "$(BLUE)=> use OSCAL Compass C2P to deploy tailored profile to VM and get oscap results from VM$(NC)\n"
+	python python/pause.py
 	source $(SOURCE); \
 	python python/compliance_to_policy.py --config python/c2p_plugin/config.yaml --component_definition component-definitions/oscap/component-definition.json --out assessment-results/ubuntu2404/results.json
 	@printf "$(BLUE)=> use OSCAL Compass trestle to transform oscap results to OSCAL json$(NC)\n"
@@ -46,6 +57,7 @@ c2p-cmd:
 .SILENT: c2p-config
 c2p-config:
 	@printf "$(BLUE)=> create c2p config file$(NC)\n"
+	python python/pause.py
 	vagrant ssh-config > /tmp/vagrant.ssh.config
 	python python/compliance_to_policy_config.py --input /tmp/vagrant.ssh.config --output python/c2p_plugin/config.yaml
 
@@ -62,6 +74,7 @@ vagrant-init:
 .SILENT: vagrant-up
 vagrant-up:
 	@printf "$(BLUE)=> start VM (if not already running)$(NC)\n"
+	python python/pause.py
 	vagrant up
 
 .SILENT: vagrant-halt
@@ -80,6 +93,7 @@ clean-venv:
 .SILENT: venv
 venv:
 	@printf "$(BLUE)=> create venv$(NC)\n"
+	python python/pause.py
 	if [ ! -d $(SOURCE_INIT) ]; then \
 		python -m venv $(SOURCE_INIT); \
 		source $(SOURCE); \
