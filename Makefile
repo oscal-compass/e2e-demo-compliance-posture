@@ -24,14 +24,17 @@ clean-up: vagrant-stop clean-venv pause-disable
 
 init: venv vagrant-start c2p 
 
+.SILENT: pause-enable
 pause-enable:
 	python python/pause.py --enable
-	
+
+.SILENT: pause-disable
 pause-disable:
 	python python/pause.py --disable
 	
 # -----
 
+.SILENT: compliance-posture
 compliance-posture:
 	@printf "$(BLUE)=> use OSCAL Compass trestle to calucalte NIST 800-53 compliance posture for VM$(NC)\n"
 	python python/pause.py
