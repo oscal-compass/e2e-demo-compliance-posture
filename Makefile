@@ -38,8 +38,10 @@ compliance-posture:
 	source $(SOURCE); \
 	python python/compliance_posture.py --markdown README.md --observations assessment-results/ubuntu2404/results.json --software component-definitions/Ubuntu_Linux_24.04_LTS/component-definition.json --validation component-definitions/oscap/component-definition.json
 
+.SILENT: display-posture
 display-posture:
 	@printf "$(BLUE)=> display compliance posture in default browser$(NC)\n"
+	python python/pause.py
 	python python/markdown_display.py
 
 # -----
@@ -56,7 +58,7 @@ c2p-cmd:
 
 .SILENT: c2p-config
 c2p-config:
-	@printf "$(BLUE)=> create c2p config file$(NC)\n"
+	@printf "$(BLUE)=> create OSCAL Compass C2P config file$(NC)\n"
 	python python/pause.py
 	vagrant ssh-config > /tmp/vagrant.ssh.config
 	python python/compliance_to_policy_config.py --input /tmp/vagrant.ssh.config --output python/c2p_plugin/config.yaml
@@ -68,11 +70,12 @@ vagrant-stop: vagrant-halt
 
 .SILENT: vagrant-init
 vagrant-init:
-	@printf "$(BLUE)=> get VM image$(NC)\n"
+	@printf "$(BLUE)=> copy vagrant file to current folder$(NC)\n"
 	cp -p resources/vagrant/ubuntu-24.04/Vagrantfile .
 
 .SILENT: vagrant-up
 vagrant-up:
+	@printf "$(BLUE)=> download VM (if not already downloaded and...)$(NC)\n"
 	@printf "$(BLUE)=> start VM (if not already running)$(NC)\n"
 	python python/pause.py
 	vagrant up
