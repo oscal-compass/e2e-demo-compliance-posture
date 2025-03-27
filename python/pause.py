@@ -26,7 +26,8 @@ def main():
         with open(pause_file, 'w') as file:
             file.write('pause enabled')
     elif args.disable:
-        os.remove(pause_file)
+        if os.path.exists(pause_file):
+            os.remove(pause_file)
     else:
         if os.path.exists(pause_file):
             input('Press "Enter" key to continue...')
