@@ -104,4 +104,5 @@ venv:
 		python -m venv $(SOURCE_INIT); \
 		source $(SOURCE); \
 		pip install -r python/requirements.txt; \
+		source $(SOURCE); \
 	fi
