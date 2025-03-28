@@ -45,6 +45,7 @@ compliance-posture:
 display-posture:
 	@printf "$(BLUE)=> display compliance posture in default browser$(NC)\n"
 	python python/pause.py
+	source $(SOURCE); \
 	python python/markdown_display.py
 
 # -----
@@ -104,5 +105,4 @@ venv:
 		python -m venv $(SOURCE_INIT); \
 		source $(SOURCE); \
 		pip install -r python/requirements.txt; \
-		source $(SOURCE); \
 	fi
