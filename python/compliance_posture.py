@@ -199,6 +199,10 @@ class CompliancePosture():
         self.markdown_helper.add_line('<br/>')
         self.markdown_helper.add_line('The end-to-end-demo [compliance posture portion](https://github.com/oscal-compass/e2e-demo#demo-2---cncf-oscal-compass-automated-compliance-posture) instructions.')
         self.markdown_helper.add_line('')
+        self.markdown_helper.add_line(
+            'See [Signed assessment releases](SIGNED_RELEASES.md) for package verification instructions.'
+        )
+        self.markdown_helper.add_line('')
 
         now = datetime.now()
         datetime_without_ms = now.strftime('%Y-%m-%d %H:%M:%S')
