@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - main
+
+permissions:
+  contents: write
+
 jobs:
   release:
     name: Release
@@ -13,14 +17,24 @@ jobs:
         submodules: true
         fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v4
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
       with:
-        python-version: 3.9
+        python-version: 3.11
     - name: Install Trestle
       run: bash scripts/automation/install_trestle.sh
     - name: Release
       run: source scripts/automation/release.sh
+    - name: Publish signed assessment package
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SSP_RELEASE_REPOSITORY: oscal-compass/e2e-demo-ssp
+        SSP_RELEASE_TAG: ${{ vars.SSP_RELEASE_TAG }}
+        SSP_SIGNING_PUBLIC_KEY: ${{ secrets.SSP_SIGNING_PUBLIC_KEY }}
+        ASSESSMENT_SIGNING_PRIVATE_KEY: ${{ secrets.ASSESSMENT_SIGNING_PRIVATE_KEY }}
+        ASSESSMENT_SIGNING_KEY_PASSWORD: ${{ secrets.ASSESSMENT_SIGNING_KEY_PASSWORD }}
+        ASSESSMENT_SIGNING_PUBLIC_KEY: ${{ secrets.ASSESSMENT_SIGNING_PUBLIC_KEY }}
+      run: bash scripts/automation/publish_signed_assessment_package.sh
     - name: Push the changes
       run: bash scripts/automation/push.sh
   merge-main-to-develop:

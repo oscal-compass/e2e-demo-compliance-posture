@@ -1670,8 +1670,7 @@
             "value": "Ubuntu_Linux_24.04_LTS",
             "remarks": "rule_set_68"
           }
-        ],
-        "control-implementations": []
+        ]
       }
     ]
   }

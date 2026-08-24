@@ -6,6 +6,8 @@ The end-to-end demo [overview](https://github.com/oscal-compass/e2e-demo).
 <br/>
 The end-to-end-demo [compliance posture portion](https://github.com/oscal-compass/e2e-demo#demo-2---cncf-oscal-compass-automated-compliance-posture) instructions.
 
+See [Signed assessment releases](SIGNED_RELEASES.md) for package verification instructions.
+
 Last updated: *2025-03-27 12:56:11*
 
 <hr>
